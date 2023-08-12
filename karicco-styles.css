@@ -380,8 +380,8 @@ template {
 
 /* Styles for K.A. Ricco Square Online */
 .container.header-content {
-  display: block;
+  display: block !important;
 }
 .container.header-content .header__content-container {
-  max-width: none;
+  max-width: none !important;
 }
