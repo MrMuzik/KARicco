@@ -385,3 +385,6 @@ template {
 .container.header-content .header__content-container {
   max-width: none !important;
 }
+.logo__link.router-link-active > span > div {
+  height: 60px !important;
+}
