@@ -379,6 +379,9 @@ template {
 }
 
 /* Styles for K.A. Ricco Square Online */
-div.highlight {
-  background-color: green !important;
+.container.header-content {
+  display: block;
+}
+.container.header-content .header__content-container {
+  max-width: none;
 }
