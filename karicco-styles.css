@@ -388,3 +388,6 @@ template {
 .logo__link.router-link-active > span > div {
   height: 60px !important;
 }
+.logo__link.router-link-active > span > div img {
+  visibility: visible !important;
+}
