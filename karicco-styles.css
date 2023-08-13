@@ -382,12 +382,35 @@ template {
 .container.header-content {
   display: block !important;
 }
+.bg-sticky .container.header-content {
+  padding: 10px 20px !important;
+}
 .container.header-content .header__content-container {
   max-width: none !important;
 }
 .logo__link.router-link-active > span > div {
-  height: 60px !important;
+  height: 50px !important;
 }
 .logo__link.router-link-active > span > div img {
   visibility: visible !important;
+  width: 100%;
+}
+.nav__item {
+  padding: 12px 20px;
+  border: 1px solid transparent;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  -webkit-transition: opacity 300ms ease;
+  -moz-transition: opacity 300ms ease;
+  -ms-transition: opacity 300ms ease;
+  transition: opacity 300ms ease;
+}
+.nav__item a:hover {
+  opacity: 0.6 !important;
+}
+.nav__item a.router-link-active {
+  opacity: 1 !important;
+  border-color: #000 !important;
 }
