@@ -379,46 +379,78 @@ template {
 }
 
 /* Styles for K.A. Ricco Square Online */
-.container.header-content {
-  display: block !important;
+@media (max-width: 599px) {
+  /* mobile only */
+  
 }
-.bg-sticky .container.header-content {
-  padding: 10px 20px !important;
+
+@media (min-width: 600px) and (max-width:839px) {
+  /* tablet only */
+
 }
-.container.header-content .header__content-container {
-  max-width: none !important;
+
+@media (min-width: 840px) and (max-width:1199px) {
+  /* laptop only */
+  
 }
-.logo__link.router-link-active > span > div {
-  height: 50px !important;
+
+@media (min-width: 1200px) {
+  /* large desktop only */
+  
 }
-.logo__link.router-link-active > span > div img {
-  visibility: visible !important;
-  width: 100%;
+
+@media (max-width:839px) {
+  /* Mobile styles */
+  
 }
-nav__item {
-  padding: 0 !important;
-}
-.nav__item a {
-  padding: 12px 20px !important;
-  border: 1px solid transparent;
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 1;
-  letter-spacing: 0.05em;
-  -webkit-transition: opacity 300ms ease;
-  -moz-transition: opacity 300ms ease;
-  -ms-transition: opacity 300ms ease;
-  transition: opacity 300ms ease;
-}
-.nav__item a:hover,
-.nav__item a.router-link-active:hover {
-  opacity: 0.6 !important;
-  text-decoration: none !important;
-}
-.nav__item a.router-link-active {
-  opacity: 1 !important;
-  border-color: #000 !important;
-}
-#groups\/0\/button a {
-  border: 1px solid #fff !important;
+
+@media (min-width:840px) {
+  /* Desktop styles */
+  .container.header-content {
+    display: block !important;
+  }
+  .bg-sticky .container.header-content {
+    padding: 10px 20px !important;
+  }
+  .container.header-content .header__content-container {
+    max-width: none !important;
+  }
+  .logo__link.router-link-active > span > div {
+    height: 50px !important;
+  }
+  .logo__link.router-link-active > span > div img {
+    visibility: visible !important;
+    width: 100%;
+  }
+  nav__item {
+    padding: 0 !important;
+  }
+  .nav__item a {
+    padding: 12px 20px !important;
+    border: 1px solid transparent;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.05em;
+    -webkit-transition: opacity 300ms ease;
+    -moz-transition: opacity 300ms ease;
+    -ms-transition: opacity 300ms ease;
+    transition: opacity 300ms ease;
+  }
+  .nav__item a:hover,
+  .nav__item a.router-link-active:hover {
+    opacity: 0.6 !important;
+    text-decoration: none !important;
+  }
+  .nav__item a:hover:after,
+  .nav__item a.router-link-active:hover:after {
+    content: none !important;
+  }
+  .nav__item a.router-link-active {
+    opacity: 1 !important;
+    border-color: #000 !important;
+  }
+  #groups\/0\/button a {
+    border: 1px solid #fff !important;
+  }
 }
