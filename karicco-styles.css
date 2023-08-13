@@ -395,7 +395,10 @@ template {
   visibility: visible !important;
   width: 100%;
 }
-.nav__item {
+nav__item {
+  padding: 0 !important;
+}
+.nav__item a {
   padding: 12px 20px;
   border: 1px solid transparent;
   font-size: 12px;
@@ -413,4 +416,7 @@ template {
 .nav__item a.router-link-active {
   opacity: 1 !important;
   border-color: #000 !important;
+}
+#groups\/0\/button a {
+  border: 1px solid #fff !important;
 }
