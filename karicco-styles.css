@@ -451,11 +451,19 @@ template {
     border-color: #000 !important;
   }
 }
-
+/* Styles for all sizes */
 .container > .w-container.row > .w-cell {
   margin-top: auto !important;
   margin-bottom: auto !important;
 }
-#groups\/0\/button a {
+.w-button--primary {
   border: 1px solid #fff !important;
+}
+form .form__row:before {
+  content: "Join Our Sea Breeze newsletter today!";
+  display: block;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.25;
 }
