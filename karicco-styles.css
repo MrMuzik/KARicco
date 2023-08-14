@@ -442,8 +442,8 @@ template {
     opacity: 0.6 !important;
     text-decoration: none !important;
   }
-  .nav__item a:hover:after,
-  .nav__item a.router-link-active:hover:after {
+  .nav__item a:after,
+  .nav__item a.router-link-active:after {
     content: none !important;
   }
   .nav__item a.router-link-active {
