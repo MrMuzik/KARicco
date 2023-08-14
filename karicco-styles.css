@@ -415,10 +415,10 @@ template {
   .container.header-content .header__content-container {
     max-width: none !important;
   }
-  .logo__link.router-link-active > span > div {
+  .header__logo .logo__link.router-link-active > span > div {
     height: 50px !important;
   }
-  .logo__link.router-link-active > span > div img {
+  .header__logo .logo__link.router-link-active > span > div img {
     visibility: visible !important;
     width: 100%;
   }
@@ -450,7 +450,12 @@ template {
     opacity: 1 !important;
     border-color: #000 !important;
   }
-  #groups\/0\/button a {
-    border: 1px solid #fff !important;
-  }
+}
+
+.container > .w-container.row > .w-cell {
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}
+#groups\/0\/button a {
+  border: 1px solid #fff !important;
 }
