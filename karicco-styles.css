@@ -452,7 +452,7 @@ template {
   }
 }
 /* Styles for all sizes */
-.container > .w-container.row > .w-cell {
+.banner-slide-wrapper .container > .w-container.row > .w-cell {
   margin-top: auto !important;
   margin-bottom: auto !important;
 }
