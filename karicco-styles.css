@@ -466,4 +466,5 @@ form .form__row:before {
   font-size: 18px;
   font-weight: 700;
   line-height: 1.25;
+  margin-bottom: 20px;
 }
