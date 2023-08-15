@@ -409,9 +409,6 @@ template {
   .container.header-content {
     display: block !important;
   }
-  .bg-sticky .container.header-content {
-    padding: 10px 20px !important;
-  }
   .container.header-content .header__content-container {
     max-width: none !important;
   }
@@ -419,7 +416,6 @@ template {
     height: 50px !important;
   }
   .header__logo .logo__link.router-link-active > span > div img {
-    visibility: visible !important;
     width: 100%;
   }
   nav__item {
@@ -452,6 +448,12 @@ template {
   }
 }
 /* Styles for all sizes */
+.bg-sticky .container.header-content {
+  padding: 10px 20px !important;
+}
+.header__logo .logo__link.router-link-active > span > div img {
+  visibility: visible !important;
+}
 .banner-slide-wrapper .container > .w-container.row > .w-cell {
   margin-top: auto !important;
   margin-bottom: auto !important;
