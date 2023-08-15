@@ -468,3 +468,40 @@ form .form__row:before {
   line-height: 1.25;
   margin-bottom: 20px;
 }
+/* Footer Styles */
+.footer-row1 {
+  align-items: flex-start;
+}
+.footer-row1-col1 .w-sitelogo > div  {
+  --mobile-width: 50% !important;
+}
+.footer-row1-col2 blockquote {
+  display: block;
+  font-size: 14px;
+  background: transparent;
+  padding: 0 0 0 1em;
+  margin: 0 auto 20px;
+  position: relative;
+  font-family: 'Birdseye', sans-serif;
+  font-weight: 500;
+  line-height: 1.75;
+  text-align: left;
+}
+.footer-row1-col2 blockquote:before {
+  position: absolute;
+  content: '\201C';
+  top: 0;
+  left: 0;
+  font-family: 'Birdseye', sans-serif;
+  font-size: 1.5em;
+  line-height: 1;
+  font-weight: bold;
+}
+.footer-row1-col2 blockquote a {
+  color: #fff;
+  text-decoration: none;
+}
+.footer-row1-col2 blockquote a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
