@@ -1,5 +1,6 @@
 const init = () => {
   console.log('init');
+  // Footer script
   const footer = document.querySelector('div[data-block-purpose^="footer"]');
   const footerContainer = footer.querySelector('.container > .w-container');
   const footerRows = footerContainer.querySelectorAll('.w-cell.row .w-container.row');
@@ -8,6 +9,7 @@ const init = () => {
   const row1Col3 = footerRows[0].lastChild;
   const row2Col1 = footerRows[1].firstChild;
   const row2Col2 = footerRows[1].lastChild;
+  const row2Col2Links = document.getElementById('7b3b9ad0-5e07-11e9-9104-6d5bd0e45376').querySelectorAll('a');
   footerRows[0].classList.add('footer-row1');
   footerRows[1].classList.add('footer-row2');
   row1Col2.classList.add('w-cell', 'col', 'col-12', 'col-sm-6', 'col-md-4', 'col-lg-6', 'footer-row1-col2');
@@ -19,6 +21,17 @@ const init = () => {
   row1Col3.classList.add('footer-row1-col3');
   row2Col1.classList.add('align--left-sm', 'align--left-md', 'align--left-lg', 'footer-row2-col1');
   row2Col2.classList.add('footer-row2-col2', 'align--right-sm', 'align--right-md', 'align--right-lg');
-};
+  row2Col2Links.forEach((link) => {
+    if (link.attributes.href.value.includes('facebook')) { 
+      link.classList.add('wsite-social-facebook');
+    }
+    if (link.attributes.href.value.includes('instagram')) {
+      link.classList.add('wsite-social-instagram');
+    }
+    if (link.attributes.href.value.includes('mailto')) {
+      link.classList.add('wsite-social-mail');
+    }
+    link.children[0].remove();
+  });
 
 // document.addEventListener('DOMContentLoaded', init);
