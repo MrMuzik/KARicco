@@ -581,3 +581,14 @@ form .form__row:before {
 .footer-row2-col2-addition {
   text-align: left;
 }
+.footer-nav {
+  color: #fff;
+}
+.footer-nav a {
+  color: #fff;
+  text-decoration: none;
+}
+.footer-nav a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
