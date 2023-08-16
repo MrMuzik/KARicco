@@ -40,6 +40,6 @@ const init = () => {
   row2Col2LinkContainer.insertBefore(row2Col2Addition, row2Col2Links[0]);
   footerNav.classList.add('footer-nav');
   footerNav.innerHTML = `<a href="/tos">Terms of Service</a> | <a href="/privacy">Privacy Policy </a>|&nbsp; Copyright © 2023&nbsp;`;
-  row2Col2LinkContainer.insertAfter(footerNav, row2Col2Links[2]);
+  row2Col2LinkContainer.parentNode.insertBefore(footerNav, row2Col2LinkContainer.nextSibling);
 };
 // document.addEventListener('DOMContentLoaded', init);

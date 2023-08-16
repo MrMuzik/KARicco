@@ -401,7 +401,12 @@ template {
 
 @media (max-width:839px) {
   /* Mobile styles */
-  
+  .footer-row2-col2-addition {
+    text-align: center;
+  }
+  form .form__row:before {
+    margin: 20px 0;
+  }
 }
 
 @media (min-width:840px) {
@@ -445,6 +450,12 @@ template {
   .nav__item a.router-link-active {
     opacity: 1 !important;
     border-color: #000 !important;
+  }
+  .footer-row2-col2-addition {
+    text-align: left;
+  }
+  form .form__row:before {
+    margin: 0 0 20px 0;
   }
 }
 /* Styles for all sizes */
@@ -526,7 +537,6 @@ form .form__row:before {
   font-size: 18px;
   font-weight: 700;
   line-height: 1.25;
-  margin-bottom: 20px;
 }
 /* Footer Styles */
 .footer-row1 {
@@ -578,11 +588,13 @@ form .form__row:before {
   background: #397fba;
   color: #ffffff;
 }
-.footer-row2-col2-addition {
-  text-align: left;
-}
 .footer-nav {
   color: #fff;
+  margin-top: 20px;
+  font-family: 'Birdseye', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.75;
 }
 .footer-nav a {
   color: #fff;
