@@ -455,6 +455,36 @@ template {
   font-weight: normal;
   font-style: normal
 }
+.wsite-social-item {
+  display: inline-block;
+  color: #fff;
+  font-size: 20px;
+  margin: 5px;
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  transition: all 300ms ease;
+  vertical-align: middle;
+  width: auto;
+  height: auto;
+  background-image: none;
+  background-repeat: no-repeat;
+  text-transform: none;
+  text-decoration: none;
+}
+.wsite-social-item:before {
+  font-family: "wsocial";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.wsite-social-item:hover {
+  color: #5293ca;
+}
 .wsite-social-instagram:before {
   content: "\e607"
 }
@@ -547,4 +577,7 @@ form .form__row:before {
 .footer-row1-col2 .w-button:hover {
   background: #397fba;
   color: #ffffff;
+}
+.footer-row2-col2-addition {
+  text-align: left;
 }

@@ -1,5 +1,4 @@
 const init = () => {
-  console.log('init');
   // Footer script
   const footer = document.querySelector('div[data-block-purpose^="footer"]');
   const footerContainer = footer.querySelector('.container > .w-container');
@@ -9,7 +8,10 @@ const init = () => {
   const row1Col3 = footerRows[0].lastChild;
   const row2Col1 = footerRows[1].firstChild;
   const row2Col2 = footerRows[1].lastChild;
-  const row2Col2Links = document.getElementById('7b3b9ad0-5e07-11e9-9104-6d5bd0e45376').querySelectorAll('a');
+  const row2Col2LinkContainer = document.getElementById('7b3b9ad0-5e07-11e9-9104-6d5bd0e45376');
+  const row2Col2Links = row2Col2LinkContainer.querySelectorAll('a');
+  const row2Col2Addition = document.createElement('div');
+  const footerNav = document.createElement('div');
   footerRows[0].classList.add('footer-row1');
   footerRows[1].classList.add('footer-row2');
   row1Col2.classList.add('w-cell', 'col', 'col-12', 'col-sm-6', 'col-md-4', 'col-lg-6', 'footer-row1-col2');
@@ -23,15 +25,20 @@ const init = () => {
   row2Col2.classList.add('footer-row2-col2', 'align--right-sm', 'align--right-md', 'align--right-lg');
   row2Col2Links.forEach((link) => {
     if (link.attributes.href.value.includes('facebook')) { 
-      link.classList.add('wsite-social-facebook');
+      link.classList.add('wsite-social-facebook', 'wsite-social-item');
     }
     if (link.attributes.href.value.includes('instagram')) {
-      link.classList.add('wsite-social-instagram');
+      link.classList.add('wsite-social-instagram', 'wsite-social-item');
     }
     if (link.attributes.href.value.includes('mailto')) {
-      link.classList.add('wsite-social-mail');
+      link.classList.add('wsite-social-mail', 'wsite-social-item');
     }
     link.children[0].remove();
   });
-
+  row2Col2Addition.classList.add('footer-row2-col2-addition');
+  row2Col2LinkContainer.insertBefore(row2Col2Addition, row2Col2Links[0]);
+  footerNav.classList.add('footer-nav');
+  footerNav.innerHTML = `<a href="/tos">Terms of Service</a> | <a href="/privacy">Privacy Policy </a>|&nbsp; Copyright © 2023&nbsp;`;
+  row2Col2LinkContainer.insertAfter(footerNav, row2Col2Links[2]);
+};
 // document.addEventListener('DOMContentLoaded', init);
