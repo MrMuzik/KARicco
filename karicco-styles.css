@@ -615,3 +615,31 @@ form .form__row:before {
 .w-block.w-background-light h2 {
   color: #5293ca !important;
 }
+/* Local Love on Home Style */
+.local-love-container {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.local-love-container img.imgHasMax {
+  max-height: 500px;
+  aspect-ratio: 14/23;
+}
+.local-love-centered {
+  text-align: center;
+}
+.toBeReplaced, .local-love-social, .local-love-social + div, .local-love-social + div + div {
+  margin-top: 1rem;
+}
+.gallery-container {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .local-love-container {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .local-love-container img.imgHasMax {
+    aspect-ratio: auto;
+  }
+}
