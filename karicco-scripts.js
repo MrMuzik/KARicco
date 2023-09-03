@@ -79,8 +79,12 @@ const initFinal = () => {
 
 const init = () => {
   console.log('karicco-scripts.js loaded in init');
-  const links = document.querySelectorAll('li.nav__item > a');
-  console.log(links);
+  let links = document.querySelectorAll('li.nav__item > a');
+  if (links.length === 0) {
+    links = document.querySelectorAll('li.nav__item > a');
+    console.log('links inner', links);
+  }
+  console.log('links outer', links);
   let theCount = 0;
   links.forEach((link) => {
     link.addEventListener('click', () => {
