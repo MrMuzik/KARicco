@@ -79,7 +79,9 @@ const initFinal = () => {
 
 const init = () => {
   console.log('karicco-scripts.js loaded in init');
-  const container = document.querySelector('.main-content-wrapper > .w-container')
+  const container = document.querySelector('.main-content-wrapper > .w-container');
+  console.log(container);
+  const observer = new MutationObserver(logChanges);
   function logChanges(records, observer) {
     for (const record of records) {
       console.log(record.target.childNodes.length);
@@ -89,7 +91,6 @@ const init = () => {
     childList: true,
     subtree: true,
   };
-  const observer = new MutationObserver(logChanges);
   observer.observe(container, observerOptions);
 };
 document.addEventListener('DOMContentLoaded', init);
