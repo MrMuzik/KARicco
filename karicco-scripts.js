@@ -79,8 +79,9 @@ const initFinal = () => {
 
 const init = () => {
   console.log('karicco-scripts.js loaded in init');
+  const page = document.querySelector('.app-container');
   const container = document.querySelector('.main-content-wrapper > .w-container');
-  console.log(container);
+  console.log(page);
   const observer = new MutationObserver(logChanges);
   function logChanges(records, observer) {
     for (const record of records) {
