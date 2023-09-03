@@ -41,5 +41,31 @@ const init = () => {
   footerNav.classList.add('footer-nav');
   footerNav.innerHTML = `<a href="/tos">Terms of Service</a> | <a href="/privacy">Privacy Policy </a>|&nbsp; Copyright © 2023&nbsp;`;
   row2Col2LinkContainer.parentNode.insertBefore(footerNav, row2Col2LinkContainer.nextSibling);
+  // Gallery script
+  const gallery = document.querySelector('div[layout="gallery-1"]');
+  const container = gallery.querySelector('.container');
+  const rows = gallery.querySelectorAll('.container > .w-cell.row')
+  const rowToMove = rows[0];
+  const rowToReplace = rows[1];
+  const images = gallery.querySelectorAll('img');
+  const imageSrcs = [];
+  images.forEach((image) => {
+    imageSrcs.push(image.src);
+  });
+  rowToReplace.innerHTML = '<div class="local-love-container"><div><img src="https://placehold.co/350x550" width="350" height="550" /></div><div class="local-love-centered"><div><img src="https://placehold.co/150x250" width="150" height="250" /></div><div class="toBeReplaced">Local Love</div><div class="local-love-social"><a href="https://www.instagram.com/kariccohairdesign/" target="_blank"><img src="https://static.xx.fbcdn.net/rsrc.php/v3/yx/r/tBxa1IFcTQH.png" width="45" height="45" /></a></div><div>Follow Us On Instagram</div><div><img src="https://placehold.co/350x100" width="350" height="100" /></div></div><div><img src="https://placehold.co/350x550" width="350" height="550" /></div></div>';
+  const headlineToReplace = document.querySelector('.toBeReplaced');
+  headlineToReplace.innerHTML = rowToMove.innerHTML;
+  rowToMove.remove();
+  const placeholderImages = document.querySelectorAll('.local-love-container img');
+  placeholderImages.forEach((image, index) => {
+    let ip = 0
+    if (index === 2 || index === 3) {
+      return;
+    } else if (index > 3) {
+      ip = 2;
+    }
+    image.src = imageSrcs[index - ip];
+  });
+  container.classList.add('gallery-container');
 };
 // document.addEventListener('DOMContentLoaded', init);
