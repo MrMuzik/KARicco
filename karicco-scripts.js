@@ -80,19 +80,39 @@ const initFinal = () => {
 const init = () => {
   console.log('karicco-scripts.js loaded in init');
   const page = document.querySelector('.app-container');
-  console.log(page);
+  // console.log(page);
   const observer = new MutationObserver(logChanges);
-  let pageLoaded = false;
+  // Items to watch:
+  let contentLoaded = false;
+  let navLoaded = false;
+  let footerLoaded = false;
+  // Watch Function
   function logChanges(records, observer) {
     for (const record of records) {
-      console.log(record.target.childNodes.length);
-      if (!pageLoaded) {
+      // console.log(record.target.childNodes.length);
+      // Content
+      if (!contentLoaded) {
         const container = document.querySelector('.main-content-wrapper > .w-container');
         console.log('check containter', container);
         if (container) {
-          pageLoaded = true;
+          contentLoaded = true;
           console.log('page loaded');
         }
+      }
+      // Nav
+      if (!navLoaded) {
+        const links = document.querySelectorAll('li.nav__item > a');
+        if (links.length > 0) {
+          navLoaded = true;
+          console.log('nav loaded');
+        }
+      }
+      // Footer
+      if (!footerLoaded) {
+        const footer = document.querySelector('div[data-block-purpose^="footer"]');
+        if (footer) {
+          footerLoaded = true;
+          console.log('footer loaded');        }
       }
     }
   }
