@@ -80,12 +80,20 @@ const initFinal = () => {
 const init = () => {
   console.log('karicco-scripts.js loaded in init');
   const page = document.querySelector('.app-container');
-  const container = document.querySelector('.main-content-wrapper > .w-container');
   console.log(page);
   const observer = new MutationObserver(logChanges);
   function logChanges(records, observer) {
+    let pageLoaded = false;
     for (const record of records) {
       console.log(record.target.childNodes.length);
+      if (!pageLoaded) {
+        const container = document.querySelector('.main-content-wrapper > .w-container');
+        console.log('check containter', container);
+        if (container) {
+          pageLoaded = true;
+          console.log('page loaded');
+        }
+      }
     }
   }
   const observerOptions = {
