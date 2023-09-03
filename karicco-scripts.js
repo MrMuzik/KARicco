@@ -77,4 +77,12 @@ const init = () => {
   }
 };
 console.log('karicco-scripts.js loaded');
+const links = document.querySelectorAll('li.nav__item > a');
+let theCount = 0;
+links.forEach((link) => {
+  link.addEventListener('click', () => {
+    theCount++;
+    console.log(theCount);
+  });
+});
 // document.addEventListener('DOMContentLoaded', init);
