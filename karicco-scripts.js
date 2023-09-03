@@ -86,6 +86,14 @@ const init = () => {
   let contentLoaded = false;
   let navLoaded = false;
   let footerLoaded = false;
+  // Pages to watch:
+  let homePageLoaded = false;
+  let servicesPageLoaded = false;
+  let productsPageLoaded = false;
+  let giftCardsPageLoaded = false;
+  let ourStoryPageLoaded = false;
+  let staffPageLoaded = false;
+  let contactPageLoaded = false;
   // Watch Function
   function logChanges(records, observer) {
     for (const record of records) {
@@ -109,6 +117,43 @@ const init = () => {
       }
       if (contentLoaded && navLoaded) {
         let activePage = document.querySelector('.router-link-exact-active').attributes.href.value;
+        switch (activePage) {
+          // TODO: Update these to match the new site before launch
+          case '/':
+            homePageLoaded = true;
+            console.log('homePageLoaded', homePageLoaded);
+            break;
+          case '/home':
+            homePageLoaded = true;
+            console.log('homePageLoaded', homePageLoaded);
+            break;
+          case '/services':
+            servicesPageLoaded = true;
+            console.log('servicesPageLoaded', servicesPageLoaded);
+            break;
+          case '/products':
+            productsPageLoaded = true;
+            console.log('productsPageLoaded', productsPageLoaded);
+            break;
+          case '/gift-cards':
+            giftCardsPageLoaded = true;
+            console.log('giftCardsPageLoaded', giftCardsPageLoaded);
+            break;
+          case '/our-story':
+            ourStoryPageLoaded = true;
+            console.log('ourStoryPageLoaded', ourStoryPageLoaded);
+            break;
+          case '/staff':
+            staffPageLoaded = true;
+            console.log('staffPageLoaded', staffPageLoaded);
+            break;
+          case '/contact-us':
+            contactPageLoaded = true;
+            console.log('contactPageLoaded', contactPageLoaded);
+            break;
+          default:
+            console.log('default');
+        }
         console.log('activePage', activePage);
       }
       // Footer
