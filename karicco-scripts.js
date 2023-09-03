@@ -107,6 +107,10 @@ const init = () => {
           console.log('nav loaded');
         }
       }
+      if (contentLoaded && navLoaded) {
+        let activePage = document.querySelector('.router-link-exact-active').attributes.href.value;
+        console.log('activePage', activePage);
+      }
       // Footer
       if (!footerLoaded) {
         const footer = document.querySelector('div[data-block-purpose^="footer"]');
