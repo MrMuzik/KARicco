@@ -1,4 +1,4 @@
-const init = () => {
+const initFinal = () => {
   // Sitewide script
   const activePage = document.querySelector('.router-link-exact-active').attributes.href.value;
   // Footer script
@@ -76,13 +76,16 @@ const init = () => {
     console.log('services');
   }
 };
-console.log('karicco-scripts.js loaded');
-const links = document.querySelectorAll('li.nav__item > a');
-let theCount = 0;
-links.forEach((link) => {
-  link.addEventListener('click', () => {
-    theCount++;
-    console.log(theCount);
+
+const init = () => {
+  console.log('karicco-scripts.js loaded');
+  const links = document.querySelectorAll('li.nav__item > a');
+  let theCount = 0;
+  links.forEach((link) => {
+    link.addEventListener('click', () => {
+      theCount++;
+      console.log(theCount);
+    });
   });
-});
-// document.addEventListener('DOMContentLoaded', init);
+};
+document.addEventListener('DOMContentLoaded', init);
