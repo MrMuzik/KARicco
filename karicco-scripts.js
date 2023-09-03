@@ -92,6 +92,6 @@ const init = () => {
     childList: true,
     subtree: true,
   };
-  observer.observe(container, observerOptions);
+  observer.observe(page, observerOptions);
 };
 document.addEventListener('DOMContentLoaded', init);
