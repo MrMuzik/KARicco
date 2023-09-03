@@ -79,18 +79,17 @@ const initFinal = () => {
 
 const init = () => {
   console.log('karicco-scripts.js loaded in init');
-  let links = document.querySelectorAll('li.nav__item > a');
-  // while (links.length === 0) {
-  //   links = document.querySelectorAll('li.nav__item > a');
-  //   console.log('links inner', links);
-  // }
-  console.log('links outer', links);
-  let theCount = 0;
-  links.forEach((link) => {
-    link.addEventListener('click', () => {
-      theCount++;
-      console.log(theCount);
-    });
-  });
+  const container = document.querySelector('.main-content-wrapper > .w-container')
+  function logChanges(records, observer) {
+    for (const record of records) {
+      console.log(record.target.childNodes.length);
+    }
+  }
+  const observerOptions = {
+    childList: true,
+    subtree: true,
+  };
+  const observer = new MutationObserver(logChanges);
+  observer.observe(container, observerOptions);
 };
 document.addEventListener('DOMContentLoaded', init);
