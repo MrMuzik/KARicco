@@ -82,8 +82,8 @@ const init = () => {
   const page = document.querySelector('.app-container');
   console.log(page);
   const observer = new MutationObserver(logChanges);
+  let pageLoaded = false;
   function logChanges(records, observer) {
-    let pageLoaded = false;
     for (const record of records) {
       console.log(record.target.childNodes.length);
       if (!pageLoaded) {
