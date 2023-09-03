@@ -120,36 +120,52 @@ const init = () => {
         switch (activePage) {
           // TODO: Update these to match the new site before launch
           case '/':
-            homePageLoaded = true;
-            console.log('homePageLoaded', homePageLoaded);
+            if (!homePageLoaded) {
+              homePageLoaded = true;
+              console.log('homePageLoaded', homePageLoaded);
+            }
             break;
           case '/home':
-            homePageLoaded = true;
-            console.log('homePageLoaded', homePageLoaded);
+            if (!homePageLoaded) {
+              homePageLoaded = true;
+              console.log('homePageLoaded', homePageLoaded);
+            }
             break;
           case '/services':
-            servicesPageLoaded = true;
-            console.log('servicesPageLoaded', servicesPageLoaded);
+            if (!servicesPageLoaded) {
+              servicesPageLoaded = true;
+              console.log('servicesPageLoaded', servicesPageLoaded);
+            }
             break;
           case '/products':
-            productsPageLoaded = true;
-            console.log('productsPageLoaded', productsPageLoaded);
+            if (!productsPageLoaded) {
+              productsPageLoaded = true;
+              console.log('productsPageLoaded', productsPageLoaded);
+            }
             break;
           case '/gift-cards':
-            giftCardsPageLoaded = true;
-            console.log('giftCardsPageLoaded', giftCardsPageLoaded);
+            if (!giftCardsPageLoaded) {
+              giftCardsPageLoaded = true;
+              console.log('giftCardsPageLoaded', giftCardsPageLoaded);
+            }
             break;
           case '/our-story':
-            ourStoryPageLoaded = true;
-            console.log('ourStoryPageLoaded', ourStoryPageLoaded);
+            if (!ourStoryPageLoaded) {
+              ourStoryPageLoaded = true;
+              console.log('ourStoryPageLoaded', ourStoryPageLoaded);
+            }
             break;
           case '/staff':
-            staffPageLoaded = true;
-            console.log('staffPageLoaded', staffPageLoaded);
+            if (!staffPageLoaded) {
+              staffPageLoaded = true;
+              console.log('staffPageLoaded', staffPageLoaded);
+            }
             break;
           case '/contact-us':
-            contactPageLoaded = true;
-            console.log('contactPageLoaded', contactPageLoaded);
+            if (!contactPageLoaded) {
+              contactPageLoaded = true;
+              console.log('contactPageLoaded', contactPageLoaded);
+            }
             break;
           default:
             console.log('default');
