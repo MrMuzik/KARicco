@@ -1,6 +1,8 @@
 const initFinal = () => {
-  // Sitewide script
-  const activePage = document.querySelector('.router-link-exact-active').attributes.href.value;
+  // Site-wide script - Duplicate into eact page load
+  const headerBanner = document.querySelector('.w-image-block.w-block-banner.w-block.banner-3');
+  headerBanner.classList.add('custom-header-banner');
+  headerBanner.querySelector('[id="groups\/0\/title"]').classList.add('custom-header-banner-page-title'); // add a second class for dark pages -- Products
   // Footer script
   const footer = document.querySelector('div[data-block-purpose^="footer"]');
   const footerContainer = footer.querySelector('.container > .w-container');
@@ -43,7 +45,7 @@ const initFinal = () => {
   footerNav.classList.add('footer-nav');
   footerNav.innerHTML = `<a href="/tos">Terms of Service</a> | <a href="/privacy">Privacy Policy </a>|&nbsp; Copyright © 2023&nbsp;`;
   row2Col2LinkContainer.parentNode.insertBefore(footerNav, row2Col2LinkContainer.nextSibling);
-  // Gallery script
+  // Home Page Gallery script
   const gallery = document.querySelector('div[layout="gallery-1"]');
   if (gallery) {
     const container = gallery.querySelector('.container');
@@ -72,15 +74,13 @@ const initFinal = () => {
     container.classList.add('gallery-container');
   }
   // Services script
-  if (activePage.includes('services')) {
-    console.log('services');
-  }
+  const containerToHoldServices = document.querySelector('[id="groups\/1\/text"]');
+  containerToHoldServices.innerHTML = '<div class="simple-table-wrapper"><table class="simple-table style-top"><tbody><tr><td class="cell" style="width: 50%;"><div class="paragraph"><font color="#ffffff">DESIGN SERVICES</font></div></td><td class="cell" style="width: 50%;"><div class="paragraph"><font color="#ffffff">PRICES</font></div></td></tr><tr><td class="cell" style="width: 50%;"><div class="paragraph">Haircut &amp; Blow Out</div></td><td class="cell" style="width: 50%;"><div class="paragraph"><span style="font-weight:700"></span>$60 - $85</div></td></tr><tr><td class="cell" style="width: 50%;"><div class="paragraph">Wash &amp; Style</div></td><td class="cell" style="width: 50%;"><div class="paragraph">​$50+ ( w/hot tool additional $10.00)</div></td></tr><tr><td class="cell" style="width: 50%;"><div class="paragraph">Wet Hair Cut</div></td><td class="cell" style="width: 50%;"><div class="paragraph"><span style="color:rgb(34, 34, 34)">$50+</span></div></td></tr></tbody></table></div><div class="simple-table-wrapper"><table class="simple-table style-top"><tbody><tr><td class="cell"><div class="paragraph"><font color="#ffffff">COLOR SERVICES</font></div></td><td class="cell"><div class="paragraph"><font color="#ffffff">PRICES</font></div></td></tr><tr><td class="cell"><div class="paragraph">Single Process</div></td><td class="cell"><div class="paragraph"><span style="color:rgb(34, 34, 34)">$80+</span></div></td></tr><tr><td class="cell"><div class="paragraph">​Color Gloss/ Glaze</div></td><td class="cell"><div class="paragraph"><span style="color:rgb(34, 34, 34)">&nbsp;$60+</span></div></td></tr><tr><td class="cell"><div class="paragraph">​Fashion or Corrective Color</div></td><td class="cell"><div class="paragraph">​Priced Upon Consultation&nbsp;</div></td></tr></tbody></table></div><div class="simple-table-wrapper"><table class="simple-table style-top"><tbody><tr><td class="cell"><div class="paragraph">​<font color="#ffffff">DIMENSIONAL COLOR</font>&nbsp;</div></td><td class="cell"><div class="paragraph"><font color="#ffffff">PRICES</font></div></td></tr><tr><td class="cell"><div class="paragraph">​1/2 Head Foil</div></td><td class="cell"><div class="paragraph">​$110 - $120</div></td></tr><tr><td class="cell"><div class="paragraph"><span style="color:rgb(34, 34, 34)">3/4 Foil</span></div></td><td class="cell"><div class="paragraph">​<span style="color:rgb(34, 34, 34)">&nbsp;$125 - $155</span></div></td></tr><tr><td class="cell"><div class="paragraph"><span style="color:rgb(34, 34, 34)">Full Head Foil&nbsp;</span>​</div></td><td class="cell"><div class="paragraph"><span style="color:rgb(34, 34, 34)">$150 - $190</span></div></td></tr><tr><td class="cell"><div class="paragraph"><span style="color:rgb(34, 34, 34)">Platinum Card Foil</span></div></td><td class="cell"><div class="paragraph"><span style="color:rgb(34, 34, 34)">$250+</span></div></td></tr></tbody></table></div><div class="simple-table-wrapper"><table class="simple-table style-top"><tbody><tr><td class="cell"><div class="paragraph"><font color="#ffffff">PAINTING&nbsp;​</font></div></td><td class="cell"><div class="paragraph"><font color="#ffffff">PRICES</font></div></td></tr><tr><td class="cell"><div class="paragraph"><span style="color:rgb(34, 34, 34)">Balayage</span></div></td><td class="cell"><div class="paragraph"><span style="color:rgb(34, 34, 34)">$250+</span></div></td></tr><tr><td class="cell"><div class="paragraph"><span style="color:rgb(34, 34, 34)">Ombre</span></div></td><td class="cell"><div class="paragraph"><span style="color:rgb(34, 34, 34)">$240+</span></div></td></tr></tbody></table></div><div class="simple-table-wrapper"><table class="simple-table style-top"><tbody><tr><td class="cell" style="width: 50%;"><div class="paragraph"><font color="#ffffff">​TEXTURIZING</font></div></td><td class="cell" style="width: 49%;"><div class="paragraph"><font color="#ffffff">PRICES</font></div></td></tr><tr><td class="cell" style="width: 50%;"><div class="paragraph">​Full Natural Keratin Smoothing Treatment</div></td><td class="cell" style="width: 49%;"><div class="paragraph"><span style="color:rgb(34, 34, 34)">$375+</span></div></td></tr><tr><td class="cell" style="width: 50%;"><div class="paragraph"><span style="color:rgb(34, 34, 34)">Keratin Complex Express Blowout&nbsp;</span>​</div></td><td class="cell" style="width: 49%;"><div class="paragraph"><span style="color:rgb(34, 34, 34)">$165+</span></div></td></tr></tbody></table></div><div class="paragraph">​All Pricing Is A LA CARTE</div>';
 };
 
 const init = () => {
   console.log('karicco-scripts.js loaded in init');
   const page = document.querySelector('.app-container');
-  // console.log(page);
   const observer = new MutationObserver(logChanges);
   // Items to watch:
   let contentLoaded = false;

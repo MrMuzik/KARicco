@@ -377,7 +377,7 @@ template {
 [hidden] {
   display: none;
 }
-
+/* END OF RESET */
 /* Styles for K.A. Ricco Square Online */
 @media (max-width: 599px) {
   /* mobile only */
@@ -417,6 +417,7 @@ template {
   .container.header-content .header__content-container {
     max-width: none !important;
   }
+  /* Nav */
   .header__logo .logo__link.router-link-active > span > div {
     height: 50px !important;
   }
@@ -451,14 +452,25 @@ template {
     opacity: 1 !important;
     border-color: #000 !important;
   }
+  /* Footer */
   .footer-row2-col2-addition {
     text-align: left;
   }
   form .form__row:before {
     margin: 0 0 20px 0;
   }
+  /* Local Love */
+  .local-love-container {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .local-love-container img.imgHasMax {
+    aspect-ratio: auto;
+  }
 }
 /* Styles for all sizes */
+.custom-header-banner-page-title {
+  font-weight: 100 !important;
+}
 @font-face {
   font-family: "wsocial";
   src: url(//cdn2.editmysite.com/fonts/wSocial/wsocial.eot?ts=1691791224164);
@@ -538,7 +550,7 @@ form .form__row:before {
   font-weight: 700;
   line-height: 1.25;
 }
-/* Footer Styles */
+/* Footer Styles - All Sizes */
 .footer-row1 {
   align-items: flex-start !important;
 }
@@ -604,7 +616,7 @@ form .form__row:before {
   color: #fff;
   text-decoration: underline;
 }
-/* Home Styles */
+/* Home Styles - All Sizes */
 .card.feature-card.w-background-light:before {
   content: none !important;
 }
@@ -615,7 +627,7 @@ form .form__row:before {
 .w-block.w-background-light h2 {
   color: #5293ca !important;
 }
-/* Local Love on Home Style */
+/* Local Love on Home Style - All Sizes */
 .local-love-container {
   display: grid;
   gap: 1rem;
@@ -635,11 +647,32 @@ form .form__row:before {
   display: flex;
   flex-direction: column;
 }
-@media screen and (min-width: 768px) {
-  .local-love-container {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-  .local-love-container img.imgHasMax {
-    aspect-ratio: auto;
-  }
+/* Services Styles */
+.simple-table-wrapper {
+  padding: 20px 0;
+}
+.simple-table {
+  width: 100%;
+  border: 1px solid #C9CDCF;
+  border-spacing: 0;
+}
+.simple-table td.cell {
+  border-right: 1px solid #C9CDCF;
+  border-bottom: 1px solid #C9CDCF;
+  word-break: break-word;
+  background-color: #FFFFFF;
+  width: 50%;
+}
+.simple-table.style-top tr:first-child td {
+  background-color: #3B82BF;
+}
+.simple-table td.cell .paragraph {
+  width: 90%;
+  margin: 0 5%;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  text-align: center;
+}
+.simple-table td:last-of-type {
+  border-right: none;
 }
