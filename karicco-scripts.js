@@ -80,7 +80,11 @@ const initFinal = () => {
   const teamMemberBlocks = Array.from(document.querySelectorAll('.w-text--rendered.text-component')).filter(block => block.id === "");
   const teamMemberBlockLisa = teamMemberBlocks[1];
   const teamMemberBlockJulia = teamMemberBlocks[2];
-  teamMemberBlockLisa.insertAdjacentHTML('afterend', '<div class="team-member-block">Testing this addition</div>');
+  teamMemberBlockLisa.insertAdjacentHTML('afterend', '<div><div class="team-block-marketing"><a href="https://squareup.com/appointments/book/nad1ifwni5px0c/LZ24RC7QFEQ58/services" target="_blank"><img src="https://mrmuzik.github.io/KARicco/images/lookslogo.png" alt="Looks by Lisa Aftosmes" /></a></div><div class="team-block-marketing"><a href="https://squareup.com/appointments/book/nad1ifwni5px0c/LZ24RC7QFEQ58/services" target="_blank"><img src="https://mrmuzik.github.io/KARicco/images/looksqr.png" alt="Looks by Lisa Aftosmes - QR Code" /></a></div></div>');
+  teamMemberBlockJulia.insertAdjacentHTML('afterend', '<div><div class="team-block-marketing"><a href="https://hair-by-julia-cathryn.square.site" target="_blank"><img src="https://mrmuzik.github.io/KARicco/images/julialogo.png" alt="Hair by Julia Cathryn" /></a></div><div class="team-block-marketing"><a href="https://hair-by-julia-cathryn.square.site" target="_blank"><img src="https://mrmuzik.github.io/KARicco/images/juliaqr.png" alit="Hair by Julia Cathryn - QR Code" /></a></div></div>');
+  // Contact Us script
+  const contactUsBlock = document.querySelector('.w-text--rendered.text-component.link--browser');
+  contactUsBlock.insertAdjacentHTML('beforebegin', '<img src="https://mrmuzik.github.io/KARicco/images/juliaqr.png" alt="Contact Us" />');
 };
 
 const init = () => {
