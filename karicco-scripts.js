@@ -55,6 +55,7 @@ const init = () => {
   let footerLoaded = false;
   let bannerLoaded = false;
   let galleryLoaded = false;
+  let storedActivePage = '';
   // Pages to watch:
   let homePageLoaded = false;
   let servicesPageLoaded = false;
@@ -207,7 +208,10 @@ const init = () => {
           default:
             console.log('default');
         }
-        console.log('activePage', activePage);
+        if (storedActivePage !== activePage) {
+          storedActivePage = activePage;
+          console.log('activePage', activePage);
+        }
       }
       // Footer
       if (!footerLoaded) {
