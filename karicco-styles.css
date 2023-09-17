@@ -381,17 +381,23 @@ template {
 /* Styles for K.A. Ricco Square Online */
 @media (max-width: 599px) {
   /* mobile only */
-  
+  .services-top-banner {
+    object-fit: contain !important;
+  }
 }
 
 @media (min-width: 600px) and (max-width:839px) {
   /* tablet only */
-
+  .services-top-banner {
+    object-fit: contain !important;
+  }
 }
 
 @media (min-width: 840px) and (max-width:1199px) {
   /* laptop only */
-  
+  .services-top-banner {
+    object-fit: contain !important;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -470,6 +476,10 @@ template {
 /* Styles for all sizes */
 .custom-header-banner-page-title {
   font-weight: 700 !important;
+  font-size: 60px !important;
+}
+.mt-10 {
+  margin-top: 10px !important;
 }
 @font-face {
   font-family: "wsocial";
@@ -539,8 +549,34 @@ template {
   margin-top: auto !important;
   margin-bottom: auto !important;
 }
+/* w-button w-button--button w-button--primary w-button--large w-button--full-width-mobile */
 .w-button--primary {
   border: 1px solid #fff !important;
+  color: #fff !important;
+  align-items: center;
+  background-color: rgb(82, 147, 202);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "Montserrat";
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: -0.16px;
+  line-height: 0px;
+  min-height: 48px;
+  padding: 0 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  white-space: nowrap;
+}
+.w-button--primary:hover {
+  background-color: rgb(57, 127, 186);
+  border: 1px solid #fff !important;
+  cursor: pointer;
+  color: #fff;
 }
 form .form__row:before {
   content: "Join Our Sea Breeze newsletter today!";
@@ -689,4 +725,19 @@ form .form__row:before {
 .team-block-marketing:first-child {
   margin-left: 0;
 }
-
+/* Contact style - All Sizes */
+.contact-img {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+/* Our Story - All Sizes */
+.our-story-graphic-block {
+  max-width: 313px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Products - All Sizes */
+.products-top-block {
+  padding-bottom: 0;
+  margin-bottom: -35px;
+}
