@@ -42,7 +42,7 @@ const setHomepageGallery = () => {
     placeholderImages.forEach((image, index) => {
       let ip = 0
       if (index === 2 || index === 3) {
-        // return;
+        return;
       } else if (index > 3) {
         ip = 2;
       }
