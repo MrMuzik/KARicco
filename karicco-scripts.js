@@ -171,9 +171,18 @@ const init = () => {
           console.log('activePage', activePage);
           if (activePage !== storedActivePage) {
             storedActivePage = activePage;
+            // Reset watch items
+            contentLoaded = false;
+            navLoaded = false;
+            footerLoaded = false;
+            bannerLoaded = false;
+            galleryLoaded = false;
             console.log('storedActivePage', storedActivePage);
             console.log('isFooterLoaded', footerLoaded);
             // Probably rerun page set up here
+            if (!footerLoaded) {
+              footerLoaded = setFooter();
+            }
           }
         } else {
           console.log('activePage not found');
