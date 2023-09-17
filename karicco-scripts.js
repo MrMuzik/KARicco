@@ -179,10 +179,6 @@ const init = () => {
             galleryLoaded = false;
             console.log('storedActivePage', storedActivePage);
             console.log('isFooterLoaded', footerLoaded);
-            // Probably rerun page set up here
-            if (!footerLoaded) {
-              footerLoaded = setFooter();
-            }
           }
         } else {
           console.log('activePage not found');
