@@ -83,16 +83,16 @@ const init = () => {
             if (!homePageLoaded) {
               homePageLoaded = true;
               console.log('homePageLoaded', homePageLoaded);
-              bannerSizing();
               homepageGallery();
+              bannerSizing();
             }
             break;
           case '/home':
             if (!homePageLoaded) {
               homePageLoaded = true;
               console.log('homePageLoaded', homePageLoaded);
-              bannerSizing();
               homepageGallery();
+              bannerSizing();
             }
             break;
           case '/services':
@@ -184,12 +184,11 @@ const init = () => {
       // Footer
       if (!footerLoaded) {
         const footer = document.querySelector('div[data-block-purpose^="footer"]');
-        if (footer) {
+        const footerContainer = footer.querySelector('.container > .w-container');
+        const footerRows = footerContainer.querySelectorAll('.w-cell.row .w-container.row');
+        if (footerRows) {
           footerLoaded = true;
           console.log('footer loaded');
-          const footer = document.querySelector('div[data-block-purpose^="footer"]');
-          const footerContainer = footer.querySelector('.container > .w-container');
-          const footerRows = footerContainer.querySelectorAll('.w-cell.row .w-container.row');
           const row1Col1 = footerRows[0].firstChild;
           const row1Col2 = document.createElement('div');
           const row1Col3 = footerRows[0].lastChild;
