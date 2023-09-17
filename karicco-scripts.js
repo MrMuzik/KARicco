@@ -47,6 +47,7 @@ const setHomepageGallery = () => {
       image.src = imageSrcs[index - ip];
     });
     container.classList.add('gallery-container');
+    console.log('galleryLoaded', galleryLoaded);
     return true;
   }
 };
@@ -180,11 +181,11 @@ const init = () => {
       if (!bannerLoaded) {
         bannerLoaded = setBannerSizing();
       }
-      if (contentLoaded && navLoaded) {
+      if (contentLoaded) {
         let activePage = document.location.pathname;
         if (activePage) {
           console.log('activePage', activePage);
-          if (activePage !== storedActivePage) {
+          if (activePage !== storedActivePage && storedActivePage !== '') {
             storedActivePage = activePage;
             // Reset watch items
             contentLoaded = false;
@@ -204,10 +205,9 @@ const init = () => {
               console.log('indexPageLoaded', homePageLoaded);  
             }
             
-            // if (homePageLoaded && !galleryLoaded) {
-            //   galleryLoaded = homepageGallery();
-            //   console.log('galleryLoaded', galleryLoaded);
-            // }
+            if (homePageLoaded && !galleryLoaded) {
+              galleryLoaded = setHomepageGallery();
+            }
             break;
           case '/home':
             
