@@ -177,6 +177,9 @@ const init = () => {
         // Footer
         footerLoaded = setFooter();
       }
+      if (!bannerLoaded) {
+        bannerLoaded = setBannerSizing();
+      }
       if (contentLoaded && navLoaded) {
         let activePage = document.location.pathname;
         if (activePage) {
@@ -190,7 +193,6 @@ const init = () => {
             bannerLoaded = false;
             galleryLoaded = false;
             console.log('storedActivePage', storedActivePage);
-            console.log('isFooterLoaded', footerLoaded);
           }
         } else {
           console.log('activePage not found');
@@ -201,9 +203,7 @@ const init = () => {
               homePageLoaded = true;
               console.log('indexPageLoaded', homePageLoaded);  
             }
-            if (homePageLoaded && !bannerLoaded) {
-              bannerLoaded = setBannerSizing();
-            }
+            
             // if (homePageLoaded && !galleryLoaded) {
             //   galleryLoaded = homepageGallery();
             //   console.log('galleryLoaded', galleryLoaded);
