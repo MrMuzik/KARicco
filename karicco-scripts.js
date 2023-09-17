@@ -77,21 +77,21 @@ const init = () => {
         }
       }
       if (contentLoaded && navLoaded) {
-        let activePage = document.querySelector('.router-link-exact-active').attributes.href.value;
+        let activePage = document.querySelector('.router-link-exact-active')?.attributes?.href?.value;
         const headerBanner = document.querySelector('.w-image-block.w-block-banner.w-block.banner-3');
         switch (activePage) {
           case '/':
             const gallery = document.querySelector('div[layout="gallery-1"]');
             if (!homePageLoaded && gallery && headerBanner) {
               homePageLoaded = true;
-              console.log('homePageLoaded', homePageLoaded);
+              console.log('/PageLoaded', homePageLoaded);
               homepageGallery();
               bannerSizing();
             }
             break;
           case '/home':
-            if (!homePageLoaded && gallery && headerBanner) {
-              const gallery = document.querySelector('div[layout="gallery-1"]');
+            const galleryHome = document.querySelector('div[layout="gallery-1"]');
+            if (!homePageLoaded && galleryHome && headerBanner) {
               homePageLoaded = true;
               console.log('homePageLoaded', homePageLoaded);
               homepageGallery();
