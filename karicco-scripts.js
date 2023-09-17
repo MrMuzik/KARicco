@@ -159,6 +159,11 @@ const init = () => {
         let activePage = document.querySelector('.router-link-exact-active')?.attributes?.href?.value;
         if (activePage) {
           console.log('activePage', activePage);
+          if (activePage !== storedActivePage) {
+            storedActivePage = activePage;
+            console.log('storedActivePage', storedActivePage);
+            // Probably rerun page set up here
+          }
         } else {
           console.log('activePage not found');
         }
