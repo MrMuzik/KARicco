@@ -254,12 +254,11 @@ const init = () => {
             if (!productsPageLoaded) {
               productsPageLoaded = true;
               console.log('productsPageLoaded', productsPageLoaded);
-              // setBannerSizing();
-              // const productsTopBlock = document.querySelectorAll('.main-content-wrapper .container.content-align--center')[0];
-              // console.log('productsTopBlock', productsTopBlock);
-              // if (productsTopBlock) {
-              //   productsTopBlock.classList.add('products-top-block');
-              // }
+              const productsTopBlock = document.querySelectorAll('.main-content-wrapper .container.content-align--center')[0];
+              console.log('productsTopBlock', productsTopBlock);
+              if (productsTopBlock) {
+                productsTopBlock.classList.add('products-top-block');
+              }
             }
             break;
           case '/gift-cards':
@@ -273,7 +272,6 @@ const init = () => {
             if (!ourStoryPageLoaded) {
               ourStoryPageLoaded = true;
               console.log('ourStoryPageLoaded', ourStoryPageLoaded);
-              // setBannerSizing();
               // const ourStoryBlocks = document.querySelectorAll('.story-2.container .w-container.col > .w-cell.row');
               // const ourStoryGraphicBlock = document.querySelectorAll('.story-2.container .w-container.col > .w-cell.row')[ourStoryBlocks.length - 1];
               // ourStoryGraphicBlock.classList.add('our-story-graphic-block');
@@ -283,7 +281,6 @@ const init = () => {
             if (!staffPageLoaded) {
               staffPageLoaded = true;
               console.log('staffPageLoaded', staffPageLoaded);
-              // setBannerSizing();
               // const teamMemberBlocks = Array.from(document.querySelectorAll('.w-text--rendered.text-component')).filter(block => block.id === "");
               // const teamMemberBlockLisa = teamMemberBlocks[1];
               // const teamMemberBlockJulia = teamMemberBlocks[2];
@@ -295,7 +292,6 @@ const init = () => {
             if (!contactPageLoaded) {
               contactPageLoaded = true;
               console.log('contactPageLoaded', contactPageLoaded);
-              // setBannerSizing();
               // const contactUsBlock = document.querySelector('.w-text--rendered.text-component.link--browser');
               // contactUsBlock.insertAdjacentHTML('beforebegin', '<img class="contact-img" src="https://mrmuzik.github.io/KARicco/images/location_1.jpg" alt="K.A. Ricco Hair Design Location" />');
             }
@@ -304,7 +300,6 @@ const init = () => {
             if (!jobsPageLoaded) {
               jobsPageLoaded = true;
               console.log('jobsPageLoaded', jobsPageLoaded);
-              // setBannerSizing();
               // const jobsBlock = Array.from(document.querySelectorAll('.text-component.w-text--rendered')).filter(item => item.innerText.includes('message Karen'))[0];
               // jobsBlock.insertAdjacentHTML('beforeend', '<a href="mailto:kariccohairdesign03@gmail.com" class="w-button w-button--button w-button--primary w-button--large w-button--full-width-mobile mt-10">Email Karen</a>');
             }
@@ -313,14 +308,12 @@ const init = () => {
             if (!termsOfServicePageLoaded) {
               termsOfServicePageLoaded = true;
               console.log('termsOfServicePageLoaded', termsOfServicePageLoaded);
-              // setBannerSizing();
             }
             break;
           case '/privacy-policy':
             if (!privacyPolicyPageLoaded) {
               privacyPolicyPageLoaded = true;
               console.log('privacyPolicyPageLoaded', privacyPolicyPageLoaded);
-              // setBannerSizing();
             }
             break;
           default:
