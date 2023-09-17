@@ -94,9 +94,9 @@ const setFooter = () => {
         row2Col2Addition.classList.add('footer-row2-col2-addition');
         row2Col2Addition.innerHTML = `<a href="/jobs"><img src="https://sandbox.weebly.com/uploads/b/73f56a8a48dfe0414ff550e9b6769f5c1dad0659117c2683eaa0013591841d3f/we-re-hiring-2_1692141219.png?width=2400&amp;optimize=medium" alt="Join The Team" width="196"></a>`;
         if (row2Col2Links[0]) {
-          console.log('row2Col2Links[0]', row2Col2Links[0]);
-          console.log('row2Col2LinkContainer', row2Col2LinkContainer);
-          console.log('row2Col2Addition', row2Col2Addition);
+          console.dir(row2Col2Links[0]);
+          console.dir(row2Col2LinkContainer);
+          console.dir(row2Col2Addition);
           row2Col2LinkContainer.insertBefore(row2Col2Addition, row2Col2Links[0]);
         }
         footerNav.classList.add('footer-nav');
