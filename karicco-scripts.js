@@ -104,7 +104,7 @@ const init = () => {
           // Items to watch:
           contentLoaded = false;
           navLoaded = false;
-          footerLoaded = false;
+          // footerLoaded = false;
           bannerLoaded = false;
           galleryLoaded = false;
           // Pages to watch:
