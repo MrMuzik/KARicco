@@ -4,31 +4,34 @@ const bannerSizing = () => {
   headerBanner.querySelector('[id="groups\/0\/title"]').classList.add('custom-header-banner-page-title');
 };
 
-const homepageGallery = (gallery) => {
-  const container = gallery.querySelector('.container');
-  const rows = gallery.querySelectorAll('.container > .w-cell.row')
-  const rowToMove = rows[0];
-  const rowToReplace = rows[1];
-  const images = gallery.querySelectorAll('img');
-  const imageSrcs = [];
-  images.forEach((image) => {
-    imageSrcs.push(image.src);
-  });
-  rowToReplace.innerHTML = '<div class="local-love-container"><div><img src="https://placehold.co/350x550" width="350" class="imgHasMax" /></div><div class="local-love-centered"><div><img src="https://placehold.co/150x250" width="150" /></div><div class="toBeReplaced">Local Love</div><div class="local-love-social"><a href="https://www.instagram.com/kariccohairdesign/" target="_blank"><img src="https://static.xx.fbcdn.net/rsrc.php/v3/yx/r/tBxa1IFcTQH.png" width="45" height="45" /></a></div><div>Follow Us On Instagram</div><div><img src="https://mrmuzik.github.io/KARicco/images/mermaid.png" width="350" /></div></div><div><img src="https://placehold.co/350x550" width="350" class="imgHasMax" /></div></div>';
-  const headlineToReplace = document.querySelector('.toBeReplaced');
-  headlineToReplace.innerHTML = rowToMove.innerHTML;
-  rowToMove.remove();
-  const placeholderImages = document.querySelectorAll('.local-love-container img');
-  placeholderImages.forEach((image, index) => {
-    let ip = 0
-    if (index === 2 || index === 3) {
-      return;
-    } else if (index > 3) {
-      ip = 2;
-    }
-    image.src = imageSrcs[index - ip];
-  });
-  container.classList.add('gallery-container');
+const homepageGallery = () => {
+  const gallery = document.querySelector('div[layout="gallery-1"]');
+  if (gallery) {
+    const container = gallery.querySelector('.container');
+    const rows = gallery.querySelectorAll('.container > .w-cell.row')
+    const rowToMove = rows[0];
+    const rowToReplace = rows[1];
+    const images = gallery.querySelectorAll('img');
+    const imageSrcs = [];
+    images.forEach((image) => {
+      imageSrcs.push(image.src);
+    });
+    rowToReplace.innerHTML = '<div class="local-love-container"><div><img src="https://placehold.co/350x550" width="350" class="imgHasMax" /></div><div class="local-love-centered"><div><img src="https://placehold.co/150x250" width="150" /></div><div class="toBeReplaced">Local Love</div><div class="local-love-social"><a href="https://www.instagram.com/kariccohairdesign/" target="_blank"><img src="https://static.xx.fbcdn.net/rsrc.php/v3/yx/r/tBxa1IFcTQH.png" width="45" height="45" /></a></div><div>Follow Us On Instagram</div><div><img src="https://mrmuzik.github.io/KARicco/images/mermaid.png" width="350" /></div></div><div><img src="https://placehold.co/350x550" width="350" class="imgHasMax" /></div></div>';
+    const headlineToReplace = document.querySelector('.toBeReplaced');
+    headlineToReplace.innerHTML = rowToMove.innerHTML;
+    rowToMove.remove();
+    const placeholderImages = document.querySelectorAll('.local-love-container img');
+    placeholderImages.forEach((image, index) => {
+      let ip = 0
+      if (index === 2 || index === 3) {
+        return;
+      } else if (index > 3) {
+        ip = 2;
+      }
+      image.src = imageSrcs[index - ip];
+    });
+    container.classList.add('gallery-container');
+  }
 };
 
 const init = () => {
@@ -75,27 +78,28 @@ const init = () => {
       }
       if (contentLoaded && navLoaded) {
         let activePage = document.querySelector('.router-link-exact-active').attributes.href.value;
+        const headerBanner = document.querySelector('.w-image-block.w-block-banner.w-block.banner-3');
         switch (activePage) {
           case '/':
             const gallery = document.querySelector('div[layout="gallery-1"]');
-            if (!homePageLoaded && gallery) {
+            if (!homePageLoaded && gallery && headerBanner) {
               homePageLoaded = true;
               console.log('homePageLoaded', homePageLoaded);
-              homepageGallery(gallery);
+              homepageGallery();
               bannerSizing();
             }
             break;
           case '/home':
-            if (!homePageLoaded && gallery) {
+            if (!homePageLoaded && gallery && headerBanner) {
               const gallery = document.querySelector('div[layout="gallery-1"]');
               homePageLoaded = true;
               console.log('homePageLoaded', homePageLoaded);
-              homepageGallery(gallery);
+              homepageGallery();
               bannerSizing();
             }
             break;
           case '/services':
-            if (!servicesPageLoaded) {
+            if (!servicesPageLoaded && headerBanner) {
               servicesPageLoaded = true;
               console.log('servicesPageLoaded', servicesPageLoaded);
               bannerSizing();
@@ -106,7 +110,7 @@ const init = () => {
             }
             break;
           case '/products':
-            if (!productsPageLoaded) {
+            if (!productsPageLoaded && headerBanner) {
               productsPageLoaded = true;
               console.log('productsPageLoaded', productsPageLoaded);
               bannerSizing();
@@ -122,7 +126,7 @@ const init = () => {
             }
             break;
           case '/our-story':
-            if (!ourStoryPageLoaded) {
+            if (!ourStoryPageLoaded && headerBanner) {
               ourStoryPageLoaded = true;
               console.log('ourStoryPageLoaded', ourStoryPageLoaded);
               bannerSizing();
@@ -132,7 +136,7 @@ const init = () => {
             }
             break;
           case '/staff':
-            if (!staffPageLoaded) {
+            if (!staffPageLoaded && headerBanner) {
               staffPageLoaded = true;
               console.log('staffPageLoaded', staffPageLoaded);
               bannerSizing();
@@ -144,7 +148,7 @@ const init = () => {
             }
             break;
           case '/contact-us':
-            if (!contactPageLoaded) {
+            if (!contactPageLoaded && headerBanner) {
               contactPageLoaded = true;
               console.log('contactPageLoaded', contactPageLoaded);
               bannerSizing();
@@ -153,7 +157,7 @@ const init = () => {
             }
             break;
           case '/jobs':
-            if (!jobsPageLoaded) {
+            if (!jobsPageLoaded && headerBanner) {
               jobsPageLoaded = true;
               console.log('jobsPageLoaded', jobsPageLoaded);
               bannerSizing();
@@ -162,14 +166,14 @@ const init = () => {
             }
             break;
           case '/terms-of-service':
-            if (!termsOfServicePageLoaded) {
+            if (!termsOfServicePageLoaded && headerBanner) {
               termsOfServicePageLoaded = true;
               console.log('termsOfServicePageLoaded', termsOfServicePageLoaded);
               bannerSizing();
             }
             break;
           case '/privacy-policy':
-            if (!privacyPolicyPageLoaded) {
+            if (!privacyPolicyPageLoaded && headerBanner) {
               privacyPolicyPageLoaded = true;
               console.log('privacyPolicyPageLoaded', privacyPolicyPageLoaded);
               bannerSizing();
