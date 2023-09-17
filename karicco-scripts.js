@@ -13,10 +13,10 @@ const setBannerSizing = () => {
 
 const setHomepageGallery = () => {
   const gallery = document.querySelector('div[layout="gallery-1"]');
-  console.log('gallery', gallery);
   if (!gallery) {
     return false;
   } else if (gallery) {
+    console.log('gallery', gallery);
     const container = gallery.querySelector('.container');
     const rows = gallery.querySelectorAll('.container > .w-cell.row')
     const rowToMove = rows[0];
@@ -28,10 +28,12 @@ const setHomepageGallery = () => {
       if (image.src) {
         console.log('image', image);
         imageSrcs.push(image.src);
-      } else {
-        return false;
       }
     });
+    console.log('imageSrcs reached?', imageSrcs);
+    if (!imageSrcs.length) {
+      return false;
+    }
     rowToReplace.innerHTML = '<div class="local-love-container"><div><img src="https://placehold.co/350x550" width="350" class="imgHasMax" /></div><div class="local-love-centered"><div><img src="https://placehold.co/150x250" width="150" /></div><div class="toBeReplaced">Local Love</div><div class="local-love-social"><a href="https://www.instagram.com/kariccohairdesign/" target="_blank"><img src="https://static.xx.fbcdn.net/rsrc.php/v3/yx/r/tBxa1IFcTQH.png" width="45" height="45" /></a></div><div>Follow Us On Instagram</div><div><img src="https://mrmuzik.github.io/KARicco/images/mermaid.png" width="350" /></div></div><div><img src="https://placehold.co/350x550" width="350" class="imgHasMax" /></div></div>';
     const headlineToReplace = document.querySelector('.toBeReplaced');
     headlineToReplace.innerHTML = rowToMove.innerHTML;
@@ -40,7 +42,7 @@ const setHomepageGallery = () => {
     placeholderImages.forEach((image, index) => {
       let ip = 0
       if (index === 2 || index === 3) {
-        return;
+        // return;
       } else if (index > 3) {
         ip = 2;
       }
