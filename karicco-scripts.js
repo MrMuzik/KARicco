@@ -1,12 +1,19 @@
 const bannerSizing = () => {
   const headerBanner = document.querySelector('.w-image-block.w-block-banner.w-block.banner-3');
-  headerBanner.classList.add('custom-header-banner');
-  headerBanner.querySelector('[id="groups\/0\/title"]').classList.add('custom-header-banner-page-title');
+  if (!headerBanner) {
+    return false;
+  } else if (headerBanner) {
+    headerBanner.classList.add('custom-header-banner');
+    headerBanner.querySelector('[id="groups\/0\/title"]').classList.add('custom-header-banner-page-title');
+    return true;
+  }
 };
 
 const homepageGallery = () => {
   const gallery = document.querySelector('div[layout="gallery-1"]');
-  if (gallery) {
+  if (!gallery) {
+    return false;
+  } else if (gallery) {
     const container = gallery.querySelector('.container');
     const rows = gallery.querySelectorAll('.container > .w-cell.row')
     const rowToMove = rows[0];
@@ -33,7 +40,6 @@ const homepageGallery = () => {
     container.classList.add('gallery-container');
     return true;
   }
-  return false;
 };
 
 const init = () => {
@@ -85,26 +91,30 @@ const init = () => {
         switch (activePage) {
           case '/':
             if (!homePageLoaded) {
-              console.log('/PageLoaded', homePageLoaded);              
               homePageLoaded = true;
+              console.log('/PageLoaded', homePageLoaded);  
             }
             if (homePageLoaded && !bannerLoaded) {
               bannerLoaded = bannerSizing();
+              console.log('bannerLoaded', bannerLoaded);
             }
             if (homePageLoaded && !galleryLoaded) {
               galleryLoaded = homepageGallery();
+              console.log('galleryLoaded', galleryLoaded);
             }
             break;
           case '/home':
             if (!homePageLoaded) {
-              console.log('homePageLoaded', homePageLoaded);       
               homePageLoaded = true;
+              console.log('homePageLoaded', homePageLoaded);       
             }
             if (homePageLoaded && !bannerLoaded) {
               bannerLoaded = bannerSizing();
+              console.log('bannerLoaded', bannerLoaded);
             }
             if (homePageLoaded && !galleryLoaded) {
               galleryLoaded = homepageGallery();
+              console.log('galleryLoaded', galleryLoaded);
             }
             break;
           case '/services':
