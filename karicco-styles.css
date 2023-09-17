@@ -446,15 +446,15 @@ template {
     transition: opacity 300ms ease;
   }
   .nav__item a:hover,
-  .nav__item a.router-link-active:hover {
+  .nav__item a.router-link-exact-active:hover {
     opacity: 0.6 !important;
     text-decoration: none !important;
   }
   .nav__item a:after,
-  .nav__item a.router-link-active:after {
+  .nav__item a.router-link-exact-active:after {
     content: none !important;
   }
-  .nav__item a.router-link-active {
+  .nav__item a.router-link-exact-active {
     opacity: 1 !important;
     border-color: #000 !important;
   }

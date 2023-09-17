@@ -31,7 +31,9 @@ const homepageGallery = () => {
       image.src = imageSrcs[index - ip];
     });
     container.classList.add('gallery-container');
+    return true;
   }
+  return false;
 };
 
 const init = () => {
@@ -42,6 +44,8 @@ const init = () => {
   let contentLoaded = false;
   let navLoaded = false;
   let footerLoaded = false;
+  let bannerLoaded = false;
+  let galleryLoaded = false;
   // Pages to watch:
   let homePageLoaded = false;
   let servicesPageLoaded = false;
@@ -78,22 +82,29 @@ const init = () => {
       }
       if (contentLoaded && navLoaded) {
         let activePage = document.querySelector('.router-link-exact-active')?.attributes?.href?.value;
-        const headerBanner = document.querySelector('.w-image-block.w-block-banner.w-block.banner-3');
         switch (activePage) {
           case '/':
-            if (!homePageLoaded && headerBanner) {
+            if (!homePageLoaded) {
+              console.log('/PageLoaded', homePageLoaded);              
               homePageLoaded = true;
-              console.log('/PageLoaded', homePageLoaded);
-              homepageGallery();
-              bannerSizing();
+            }
+            if (homePageLoaded && !bannerLoaded) {
+              bannerLoaded = bannerSizing();
+            }
+            if (homePageLoaded && !galleryLoaded) {
+              galleryLoaded = homepageGallery();
             }
             break;
           case '/home':
-            if (!homePageLoaded && headerBanner) {
+            if (!homePageLoaded) {
+              console.log('homePageLoaded', homePageLoaded);       
               homePageLoaded = true;
-              console.log('homePageLoaded', homePageLoaded);
-              homepageGallery();
-              bannerSizing();
+            }
+            if (homePageLoaded && !bannerLoaded) {
+              bannerLoaded = bannerSizing();
+            }
+            if (homePageLoaded && !galleryLoaded) {
+              galleryLoaded = homepageGallery();
             }
             break;
           case '/services':
