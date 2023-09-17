@@ -1,16 +1,18 @@
 const bannerSizing = () => {
   const headerBanner = document.querySelector('.w-image-block.w-block-banner.w-block.banner-3');
+  console.log('headerBanner', headerBanner);
   if (!headerBanner) {
     return false;
   } else if (headerBanner) {
     headerBanner.classList.add('custom-header-banner');
-    headerBanner.querySelector('[id="groups\/0\/title"]').classList.add('custom-header-banner-page-title');
+    headerBanner.querySelector('.container .element-group .text-component.w-text--rendered').classList.add('custom-header-banner-page-title');
     return true;
   }
 };
 
 const homepageGallery = () => {
   const gallery = document.querySelector('div[layout="gallery-1"]');
+  console.log('gallery', gallery);
   if (!gallery) {
     return false;
   } else if (gallery) {
