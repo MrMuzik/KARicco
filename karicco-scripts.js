@@ -120,7 +120,7 @@ const init = () => {
             }
             break;
           case '/services':
-            if (!servicesPageLoaded && headerBanner) {
+            if (!servicesPageLoaded) {
               servicesPageLoaded = true;
               console.log('servicesPageLoaded', servicesPageLoaded);
               bannerSizing();
@@ -131,12 +131,15 @@ const init = () => {
             }
             break;
           case '/products':
-            if (!productsPageLoaded && headerBanner) {
+            if (!productsPageLoaded) {
               productsPageLoaded = true;
               console.log('productsPageLoaded', productsPageLoaded);
               bannerSizing();
               const productsTopBlock = document.querySelectorAll('.main-content-wrapper .container.content-align--center')[0];
-              productsTopBlock.classList.add('products-top-block');
+              console.log('productsTopBlock', productsTopBlock);
+              if (productsTopBlock) {
+                productsTopBlock.classList.add('products-top-block');
+              }
             }
             break;
           case '/gift-cards':
@@ -147,7 +150,7 @@ const init = () => {
             }
             break;
           case '/our-story':
-            if (!ourStoryPageLoaded && headerBanner) {
+            if (!ourStoryPageLoaded) {
               ourStoryPageLoaded = true;
               console.log('ourStoryPageLoaded', ourStoryPageLoaded);
               bannerSizing();
@@ -157,7 +160,7 @@ const init = () => {
             }
             break;
           case '/staff':
-            if (!staffPageLoaded && headerBanner) {
+            if (!staffPageLoaded) {
               staffPageLoaded = true;
               console.log('staffPageLoaded', staffPageLoaded);
               bannerSizing();
@@ -169,7 +172,7 @@ const init = () => {
             }
             break;
           case '/contact-us':
-            if (!contactPageLoaded && headerBanner) {
+            if (!contactPageLoaded) {
               contactPageLoaded = true;
               console.log('contactPageLoaded', contactPageLoaded);
               bannerSizing();
@@ -178,7 +181,7 @@ const init = () => {
             }
             break;
           case '/jobs':
-            if (!jobsPageLoaded && headerBanner) {
+            if (!jobsPageLoaded) {
               jobsPageLoaded = true;
               console.log('jobsPageLoaded', jobsPageLoaded);
               bannerSizing();
@@ -187,14 +190,14 @@ const init = () => {
             }
             break;
           case '/terms-of-service':
-            if (!termsOfServicePageLoaded && headerBanner) {
+            if (!termsOfServicePageLoaded) {
               termsOfServicePageLoaded = true;
               console.log('termsOfServicePageLoaded', termsOfServicePageLoaded);
               bannerSizing();
             }
             break;
           case '/privacy-policy':
-            if (!privacyPolicyPageLoaded && headerBanner) {
+            if (!privacyPolicyPageLoaded) {
               privacyPolicyPageLoaded = true;
               console.log('privacyPolicyPageLoaded', privacyPolicyPageLoaded);
               bannerSizing();
