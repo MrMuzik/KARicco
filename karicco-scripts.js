@@ -30,14 +30,19 @@ const setHomepageGallery = () => {
         imageSrcs.push(image.src);
       }
     });
-    console.log('imageSrcs reached?', imageSrcs);
     if (!imageSrcs.length) {
       return false;
     }
-    rowToReplace.innerHTML = '<div class="local-love-container"><div><img src="https://placehold.co/350x550" width="350" class="imgHasMax" /></div><div class="local-love-centered"><div><img src="https://placehold.co/150x250" width="150" /></div><div class="toBeReplaced">Local Love</div><div class="local-love-social"><a href="https://www.instagram.com/kariccohairdesign/" target="_blank"><img src="https://static.xx.fbcdn.net/rsrc.php/v3/yx/r/tBxa1IFcTQH.png" width="45" height="45" /></a></div><div>Follow Us On Instagram</div><div><img src="https://mrmuzik.github.io/KARicco/images/mermaid.png" width="350" /></div></div><div><img src="https://placehold.co/350x550" width="350" class="imgHasMax" /></div></div>';
+    if (rowToReplace) {
+      rowToReplace.innerHTML = '<div class="local-love-container"><div><img src="https://placehold.co/350x550" width="350" class="imgHasMax" /></div><div class="local-love-centered"><div><img src="https://placehold.co/150x250" width="150" /></div><div class="toBeReplaced">Local Love</div><div class="local-love-social"><a href="https://www.instagram.com/kariccohairdesign/" target="_blank"><img src="https://static.xx.fbcdn.net/rsrc.php/v3/yx/r/tBxa1IFcTQH.png" width="45" height="45" /></a></div><div>Follow Us On Instagram</div><div><img src="https://mrmuzik.github.io/KARicco/images/mermaid.png" width="350" /></div></div><div><img src="https://placehold.co/350x550" width="350" class="imgHasMax" /></div></div>';
+    }
     const headlineToReplace = document.querySelector('.toBeReplaced');
-    headlineToReplace.innerHTML = rowToMove.innerHTML;
-    rowToMove.remove();
+    if (headlineToReplace) {
+      headlineToReplace.innerHTML = rowToMove.innerHTML;
+    }
+    if (rowToMove) {
+      rowToMove.remove();
+    }
     const placeholderImages = document.querySelectorAll('.local-love-container img');
     placeholderImages.forEach((image, index) => {
       let ip = 0
@@ -49,7 +54,6 @@ const setHomepageGallery = () => {
       image.src = imageSrcs[index - ip];
     });
     container.classList.add('gallery-container');
-    console.log('galleryLoaded', galleryLoaded);
     return true;
   }
 };
@@ -211,6 +215,7 @@ const init = () => {
             
             if (homePageLoaded && !galleryLoaded) {
               galleryLoaded = setHomepageGallery();
+              console.log('galleryLoaded', galleryLoaded);
             }
             break;
           case '/home':
