@@ -94,10 +94,14 @@ const setFooter = () => {
         });
         row2Col2Addition.classList.add('footer-row2-col2-addition');
         row2Col2Addition.innerHTML = `<a href="/jobs"><img src="https://sandbox.weebly.com/uploads/b/73f56a8a48dfe0414ff550e9b6769f5c1dad0659117c2683eaa0013591841d3f/we-re-hiring-2_1692141219.png?width=2400&amp;optimize=medium" alt="Join The Team" width="196"></a>`;
-        row2Col2LinkContainer.insertBefore(row2Col2Addition, row2Col2Links[0]);
+        if (row2Col2Links[0]) {
+          row2Col2LinkContainer.insertBefore(row2Col2Addition, row2Col2Links[0]);
+        }
         footerNav.classList.add('footer-nav');
         footerNav.innerHTML = `<a href="/terms-of-service">Terms of Service</a> | <a href="/privacy-policy">Privacy Policy </a>|&nbsp; Copyright © 2023&nbsp;`;
-        row2Col2LinkContainer.parentNode.insertBefore(footerNav, row2Col2LinkContainer.nextSibling);
+        if (row2Col2LinkContainer.nextSibling) {
+          row2Col2LinkContainer.parentNode.insertBefore(footerNav, row2Col2LinkContainer.nextSibling);
+        }
         console.log('footer loaded');
         return true;
       } else {
@@ -140,7 +144,6 @@ const init = () => {
   function logChanges(records, observer) {
     for (const record of records) {
       // console.log('record',record);
-      // NEW REWRITE
       // Get all elements
       if (!contentLoaded) {
         // Content
@@ -166,6 +169,7 @@ const init = () => {
         }
       }
       if (!footerLoaded) {
+        // Footer
         footerLoaded = setFooter();
       }
       if (contentLoaded && navLoaded) {
