@@ -23,8 +23,11 @@ const homepageGallery = () => {
     const images = gallery.querySelectorAll('img');
     const imageSrcs = [];
     images.forEach((image) => {
-      console.log('image', image);
-      imageSrcs.push(image.src);
+      console.dir(image);
+      if (image.src) {
+        console.log('image', image);
+        imageSrcs.push(image.src);
+      }
     });
     rowToReplace.innerHTML = '<div class="local-love-container"><div><img src="https://placehold.co/350x550" width="350" class="imgHasMax" /></div><div class="local-love-centered"><div><img src="https://placehold.co/150x250" width="150" /></div><div class="toBeReplaced">Local Love</div><div class="local-love-social"><a href="https://www.instagram.com/kariccohairdesign/" target="_blank"><img src="https://static.xx.fbcdn.net/rsrc.php/v3/yx/r/tBxa1IFcTQH.png" width="45" height="45" /></a></div><div>Follow Us On Instagram</div><div><img src="https://mrmuzik.github.io/KARicco/images/mermaid.png" width="350" /></div></div><div><img src="https://placehold.co/350x550" width="350" class="imgHasMax" /></div></div>';
     const headlineToReplace = document.querySelector('.toBeReplaced');
@@ -70,7 +73,7 @@ const init = () => {
   // Watch Function
   function logChanges(records, observer) {
     for (const record of records) {
-      console.log('record',record);
+      // console.log('record',record);
       // Content
       if (!contentLoaded) {
         const container = document.querySelector('.main-content-wrapper > .w-container');
