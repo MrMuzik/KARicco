@@ -217,22 +217,22 @@ const init = () => {
           storedActivePage = activePage;
           console.log('activePage', activePage);
           // Items to watch:
-          contentLoaded = false;
-          navLoaded = false;
-          footerLoaded = false;
-          bannerLoaded = false;
-          galleryLoaded = false;
-          // Pages to watch:
-          homePageLoaded = false;
-          servicesPageLoaded = false;
-          productsPageLoaded = false;
-          giftCardsPageLoaded = false;
-          ourStoryPageLoaded = false;
-          staffPageLoaded = false;
-          contactPageLoaded = false;
-          jobsPageLoaded = false;
-          termsOfServicePageLoaded = false;
-          privacyPolicyPageLoaded = false;
+          // contentLoaded = false;
+          // navLoaded = false;
+          // // footerLoaded = false;
+          // bannerLoaded = false;
+          // galleryLoaded = false;
+          // // Pages to watch:
+          // homePageLoaded = false;
+          // servicesPageLoaded = false;
+          // productsPageLoaded = false;
+          // giftCardsPageLoaded = false;
+          // ourStoryPageLoaded = false;
+          // staffPageLoaded = false;
+          // contactPageLoaded = false;
+          // jobsPageLoaded = false;
+          // termsOfServicePageLoaded = false;
+          // privacyPolicyPageLoaded = false;
         }
       }
       // Footer
