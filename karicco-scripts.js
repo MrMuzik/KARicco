@@ -199,6 +199,7 @@ const init = () => {
               footerLoaded = false;
               bannerLoaded = false;
               galleryLoaded = false;
+              servicesPageLoaded = false;
             }
             storedActivePage = activePage;
             console.log('storedActivePage', storedActivePage);
