@@ -70,7 +70,7 @@ const init = () => {
   // Watch Function
   function logChanges(records, observer) {
     for (const record of records) {
-      // console.log(record.target.childNodes.length);
+      console.log('record',record);
       // Content
       if (!contentLoaded) {
         const container = document.querySelector('.main-content-wrapper > .w-container');
