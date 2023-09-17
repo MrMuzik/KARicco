@@ -185,14 +185,16 @@ const init = () => {
         let activePage = document.location.pathname;
         if (activePage) {
           console.log('activePage', activePage);
-          if (activePage !== storedActivePage && storedActivePage !== '') {
+          if (activePage !== storedActivePage) {
+            if (storedActivePage !== '') {
+              // Reset watch items
+              contentLoaded = false;
+              navLoaded = false;
+              footerLoaded = false;
+              bannerLoaded = false;
+              galleryLoaded = false;
+            }
             storedActivePage = activePage;
-            // Reset watch items
-            contentLoaded = false;
-            navLoaded = false;
-            footerLoaded = false;
-            bannerLoaded = false;
-            galleryLoaded = false;
             console.log('storedActivePage', storedActivePage);
           }
         } else {
