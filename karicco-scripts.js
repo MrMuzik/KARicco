@@ -252,12 +252,12 @@ const init = () => {
             break;
           case '/products':
             if (!productsPageLoaded) {
-              productsPageLoaded = true;
               console.log('productsPageLoaded', productsPageLoaded);
               const productsTopBlock = document.querySelectorAll('.main-content-wrapper .container.content-align--center')[0];
-              console.log('productsTopBlock', productsTopBlock);
               if (productsTopBlock) {
                 productsTopBlock.classList.add('products-top-block');
+                productsPageLoaded = true;
+                console.log('productsTopBlock', productsTopBlock);
               }
             }
             break;
