@@ -667,7 +667,7 @@ form .form__row:before {
 .local-love-container {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
+  /* grid-template-columns: repeat(1, minmax(0, 1fr)); */
 }
 .local-love-container img.imgHasMax {
   max-height: 500px;
