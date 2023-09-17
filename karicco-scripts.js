@@ -200,6 +200,7 @@ const init = () => {
               bannerLoaded = false;
               galleryLoaded = false;
               servicesPageLoaded = false;
+              productsPageLoaded = false;
             }
             storedActivePage = activePage;
             console.log('storedActivePage', storedActivePage);
@@ -270,11 +271,13 @@ const init = () => {
             break;
           case '/our-story':
             if (!ourStoryPageLoaded) {
-              ourStoryPageLoaded = true;
-              console.log('ourStoryPageLoaded', ourStoryPageLoaded);
-              // const ourStoryBlocks = document.querySelectorAll('.story-2.container .w-container.col > .w-cell.row');
-              // const ourStoryGraphicBlock = document.querySelectorAll('.story-2.container .w-container.col > .w-cell.row')[ourStoryBlocks.length - 1];
-              // ourStoryGraphicBlock.classList.add('our-story-graphic-block');
+              const ourStoryBlocks = document.querySelectorAll('.story-2.container .w-container.col > .w-cell.row');
+              const ourStoryGraphicBlock = document.querySelectorAll('.story-2.container .w-container.col > .w-cell.row')[ourStoryBlocks.length - 1];
+              if (ourStoryGraphicBlock) {
+                ourStoryGraphicBlock.classList.add('our-story-graphic-block');
+                ourStoryPageLoaded = true;
+                console.log('ourStoryPageLoaded', ourStoryPageLoaded);
+              }
             }
             break;
           case '/staff':

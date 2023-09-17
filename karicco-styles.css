@@ -738,6 +738,6 @@ form .form__row:before {
 }
 /* Products - All Sizes */
 .products-top-block {
-  padding-bottom: 0;
-  margin-bottom: -35px;
+  padding-bottom: 0 !important;
+  margin-bottom: -35px !important;
 }
