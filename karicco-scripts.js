@@ -87,7 +87,10 @@ const setFooter = () => {
           if (link.attributes.href.value.includes('mailto')) {
             link.classList.add('wsite-social-mail', 'wsite-social-item');
           }
-          link.children[0].remove();
+          if (link.children[0]) {
+            console.log('link.children[0]', link.children[0]);
+            link.children[0].remove();
+          }
         });
         row2Col2Addition.classList.add('footer-row2-col2-addition');
         row2Col2Addition.innerHTML = `<a href="/jobs"><img src="https://sandbox.weebly.com/uploads/b/73f56a8a48dfe0414ff550e9b6769f5c1dad0659117c2683eaa0013591841d3f/we-re-hiring-2_1692141219.png?width=2400&amp;optimize=medium" alt="Join The Team" width="196"></a>`;
@@ -112,7 +115,7 @@ const setFooter = () => {
 };
 
 const init = () => {
-  console.log('karicco-scripts.js loaded in init');
+  console.log('Init Loaded');
   const page = document.querySelector('.app-container');
   const observer = new MutationObserver(logChanges);
   // Items to watch:
@@ -166,7 +169,7 @@ const init = () => {
         footerLoaded = setFooter();
       }
       if (contentLoaded && navLoaded) {
-        let activePage = document.querySelector('.router-link-exact-active')?.attributes?.href?.value;
+        let activePage = document.location.pathname;
         if (activePage) {
           console.log('activePage', activePage);
           if (activePage !== storedActivePage) {
