@@ -6,6 +6,7 @@ const setBannerSizing = () => {
   } else if (headerBanner) {
     headerBanner.classList.add('custom-header-banner');
     headerBanner.querySelector('.container .element-group .text-component.w-text--rendered').classList.add('custom-header-banner-page-title');
+    console.log('bannerLoaded');
     return true;
   }
 };
@@ -94,6 +95,7 @@ const setFooter = () => {
           }
         });
         row2Col2Addition.classList.add('footer-row2-col2-addition');
+        // TODO: move image to github
         row2Col2Addition.innerHTML = `<a href="/jobs"><img src="https://sandbox.weebly.com/uploads/b/73f56a8a48dfe0414ff550e9b6769f5c1dad0659117c2683eaa0013591841d3f/we-re-hiring-2_1692141219.png?width=2400&amp;optimize=medium" alt="Join The Team" width="196"></a>`;
         if (row2Col2Links[0]?.offsetHeight > 0) {
           row2Col2LinkContainer.insertBefore(row2Col2Addition, row2Col2Links[0]);
@@ -193,122 +195,110 @@ const init = () => {
         } else {
           console.log('activePage not found');
         }
-        // switch (storedActivePage) {
-        //   case '/':
-        //     if (!homePageLoaded) {
-        //       homePageLoaded = true;
-        //       console.log('/PageLoaded', homePageLoaded);  
-        //     }
-        //     if (homePageLoaded && !bannerLoaded) {
-        //       bannerLoaded = bannerSizing();
-        //       console.log('bannerLoaded', bannerLoaded);
-        //     }
-        //     if (homePageLoaded && !galleryLoaded) {
-        //       galleryLoaded = homepageGallery();
-        //       console.log('galleryLoaded', galleryLoaded);
-        //     }
-        //     break;
-        //   case '/home':
-        //     if (!homePageLoaded) {
-        //       homePageLoaded = true;
-        //       console.log('homePageLoaded', homePageLoaded);       
-        //     }
-        //     if (homePageLoaded && !bannerLoaded) {
-        //       bannerLoaded = bannerSizing();
-        //       console.log('bannerLoaded', bannerLoaded);
-        //     }
-        //     if (homePageLoaded && !galleryLoaded) {
-        //       galleryLoaded = homepageGallery();
-        //       console.log('galleryLoaded', galleryLoaded);
-        //     }
-        //     break;
-        //   case '/services':
-        //     if (!servicesPageLoaded) {
-        //       servicesPageLoaded = true;
-        //       console.log('servicesPageLoaded', servicesPageLoaded);
-        //       bannerSizing();
-        //       const containerToHoldServices = document.querySelector('[id="groups\/1\/text"]');
-        //       const servicesTopBanner = document.querySelector('.container .w-container.row a .image img');
-        //       containerToHoldServices.innerHTML = '<div class="simple-table-wrapper"><table class="simple-table style-top"><tbody><tr><td class="cell" style="width: 50%;"><div class="paragraph"><font color="#ffffff">DESIGN SERVICES</font></div></td><td class="cell" style="width: 50%;"><div class="paragraph"><font color="#ffffff">PRICES</font></div></td></tr><tr><td class="cell" style="width: 50%;"><div class="paragraph">Haircut &amp; Blow Out</div></td><td class="cell" style="width: 50%;"><div class="paragraph"><span style="font-weight:700"></span>$60 - $85</div></td></tr><tr><td class="cell" style="width: 50%;"><div class="paragraph">Wash &amp; Style</div></td><td class="cell" style="width: 50%;"><div class="paragraph">​$50+ ( w/hot tool additional $10.00)</div></td></tr><tr><td class="cell" style="width: 50%;"><div class="paragraph">Wet Hair Cut</div></td><td class="cell" style="width: 50%;"><div class="paragraph"><span style="color:rgb(34, 34, 34)">$50+</span></div></td></tr></tbody></table></div><div class="simple-table-wrapper"><table class="simple-table style-top"><tbody><tr><td class="cell"><div class="paragraph"><font color="#ffffff">COLOR SERVICES</font></div></td><td class="cell"><div class="paragraph"><font color="#ffffff">PRICES</font></div></td></tr><tr><td class="cell"><div class="paragraph">Single Process</div></td><td class="cell"><div class="paragraph"><span style="color:rgb(34, 34, 34)">$80+</span></div></td></tr><tr><td class="cell"><div class="paragraph">​Color Gloss/ Glaze</div></td><td class="cell"><div class="paragraph"><span style="color:rgb(34, 34, 34)">&nbsp;$60+</span></div></td></tr><tr><td class="cell"><div class="paragraph">​Fashion or Corrective Color</div></td><td class="cell"><div class="paragraph">​Priced Upon Consultation&nbsp;</div></td></tr></tbody></table></div><div class="simple-table-wrapper"><table class="simple-table style-top"><tbody><tr><td class="cell"><div class="paragraph">​<font color="#ffffff">DIMENSIONAL COLOR</font>&nbsp;</div></td><td class="cell"><div class="paragraph"><font color="#ffffff">PRICES</font></div></td></tr><tr><td class="cell"><div class="paragraph">​1/2 Head Foil</div></td><td class="cell"><div class="paragraph">​$110 - $120</div></td></tr><tr><td class="cell"><div class="paragraph"><span style="color:rgb(34, 34, 34)">3/4 Foil</span></div></td><td class="cell"><div class="paragraph">​<span style="color:rgb(34, 34, 34)">&nbsp;$125 - $155</span></div></td></tr><tr><td class="cell"><div class="paragraph"><span style="color:rgb(34, 34, 34)">Full Head Foil&nbsp;</span>​</div></td><td class="cell"><div class="paragraph"><span style="color:rgb(34, 34, 34)">$150 - $190</span></div></td></tr><tr><td class="cell"><div class="paragraph"><span style="color:rgb(34, 34, 34)">Platinum Card Foil</span></div></td><td class="cell"><div class="paragraph"><span style="color:rgb(34, 34, 34)">$250+</span></div></td></tr></tbody></table></div><div class="simple-table-wrapper"><table class="simple-table style-top"><tbody><tr><td class="cell"><div class="paragraph"><font color="#ffffff">PAINTING&nbsp;​</font></div></td><td class="cell"><div class="paragraph"><font color="#ffffff">PRICES</font></div></td></tr><tr><td class="cell"><div class="paragraph"><span style="color:rgb(34, 34, 34)">Balayage</span></div></td><td class="cell"><div class="paragraph"><span style="color:rgb(34, 34, 34)">$250+</span></div></td></tr><tr><td class="cell"><div class="paragraph"><span style="color:rgb(34, 34, 34)">Ombre</span></div></td><td class="cell"><div class="paragraph"><span style="color:rgb(34, 34, 34)">$240+</span></div></td></tr></tbody></table></div><div class="simple-table-wrapper"><table class="simple-table style-top"><tbody><tr><td class="cell" style="width: 50%;"><div class="paragraph"><font color="#ffffff">​TEXTURIZING</font></div></td><td class="cell" style="width: 49%;"><div class="paragraph"><font color="#ffffff">PRICES</font></div></td></tr><tr><td class="cell" style="width: 50%;"><div class="paragraph">​Full Natural Keratin Smoothing Treatment</div></td><td class="cell" style="width: 49%;"><div class="paragraph"><span style="color:rgb(34, 34, 34)">$375+</span></div></td></tr><tr><td class="cell" style="width: 50%;"><div class="paragraph"><span style="color:rgb(34, 34, 34)">Keratin Complex Express Blowout&nbsp;</span>​</div></td><td class="cell" style="width: 49%;"><div class="paragraph"><span style="color:rgb(34, 34, 34)">$165+</span></div></td></tr></tbody></table></div><div class="paragraph">​All Pricing Is A LA CARTE</div>';
-        //       servicesTopBanner.classList.add('services-top-banner');
-        //     }
-        //     break;
-        //   case '/products':
-        //     if (!productsPageLoaded) {
-        //       productsPageLoaded = true;
-        //       console.log('productsPageLoaded', productsPageLoaded);
-        //       bannerSizing();
-        //       const productsTopBlock = document.querySelectorAll('.main-content-wrapper .container.content-align--center')[0];
-        //       console.log('productsTopBlock', productsTopBlock);
-        //       if (productsTopBlock) {
-        //         productsTopBlock.classList.add('products-top-block');
-        //       }
-        //     }
-        //     break;
-        //   case '/gift-cards':
-        //     if (!giftCardsPageLoaded) {
-        //       giftCardsPageLoaded = true;
-        //       // Nothing to do here
-        //       console.log('giftCardsPageLoaded', giftCardsPageLoaded);
-        //     }
-        //     break;
-        //   case '/our-story':
-        //     if (!ourStoryPageLoaded) {
-        //       ourStoryPageLoaded = true;
-        //       console.log('ourStoryPageLoaded', ourStoryPageLoaded);
-        //       bannerSizing();
-        //       const ourStoryBlocks = document.querySelectorAll('.story-2.container .w-container.col > .w-cell.row');
-        //       const ourStoryGraphicBlock = document.querySelectorAll('.story-2.container .w-container.col > .w-cell.row')[ourStoryBlocks.length - 1];
-        //       ourStoryGraphicBlock.classList.add('our-story-graphic-block');
-        //     }
-        //     break;
-        //   case '/staff':
-        //     if (!staffPageLoaded) {
-        //       staffPageLoaded = true;
-        //       console.log('staffPageLoaded', staffPageLoaded);
-        //       bannerSizing();
-        //       const teamMemberBlocks = Array.from(document.querySelectorAll('.w-text--rendered.text-component')).filter(block => block.id === "");
-        //       const teamMemberBlockLisa = teamMemberBlocks[1];
-        //       const teamMemberBlockJulia = teamMemberBlocks[2];
-        //       teamMemberBlockLisa.insertAdjacentHTML('afterend', '<div><div class="team-block-marketing"><a href="https://squareup.com/appointments/book/nad1ifwni5px0c/LZ24RC7QFEQ58/services" target="_blank"><img src="https://mrmuzik.github.io/KARicco/images/lookslogo.png" alt="Looks by Lisa Aftosmes" /></a></div><div class="team-block-marketing"><a href="https://squareup.com/appointments/book/nad1ifwni5px0c/LZ24RC7QFEQ58/services" target="_blank"><img src="https://mrmuzik.github.io/KARicco/images/looksqr.png" alt="Looks by Lisa Aftosmes - QR Code" /></a></div></div>');
-        //       teamMemberBlockJulia.insertAdjacentHTML('afterend', '<div><div class="team-block-marketing"><a href="https://hair-by-julia-cathryn.square.site" target="_blank"><img src="https://mrmuzik.github.io/KARicco/images/julialogo.png" alt="Hair by Julia Cathryn" /></a></div><div class="team-block-marketing"><a href="https://hair-by-julia-cathryn.square.site" target="_blank"><img src="https://mrmuzik.github.io/KARicco/images/juliaqr.png" alit="Hair by Julia Cathryn - QR Code" /></a></div></div>');
-        //     }
-        //     break;
-        //   case '/contact-us':
-        //     if (!contactPageLoaded) {
-        //       contactPageLoaded = true;
-        //       console.log('contactPageLoaded', contactPageLoaded);
-        //       bannerSizing();
-        //       const contactUsBlock = document.querySelector('.w-text--rendered.text-component.link--browser');
-        //       contactUsBlock.insertAdjacentHTML('beforebegin', '<img class="contact-img" src="https://mrmuzik.github.io/KARicco/images/location_1.jpg" alt="K.A. Ricco Hair Design Location" />');
-        //     }
-        //     break;
-        //   case '/jobs':
-        //     if (!jobsPageLoaded) {
-        //       jobsPageLoaded = true;
-        //       console.log('jobsPageLoaded', jobsPageLoaded);
-        //       bannerSizing();
-        //       const jobsBlock = Array.from(document.querySelectorAll('.text-component.w-text--rendered')).filter(item => item.innerText.includes('message Karen'))[0];
-        //       jobsBlock.insertAdjacentHTML('beforeend', '<a href="mailto:kariccohairdesign03@gmail.com" class="w-button w-button--button w-button--primary w-button--large w-button--full-width-mobile mt-10">Email Karen</a>');
-        //     }
-        //     break;
-        //   case '/terms-of-service':
-        //     if (!termsOfServicePageLoaded) {
-        //       termsOfServicePageLoaded = true;
-        //       console.log('termsOfServicePageLoaded', termsOfServicePageLoaded);
-        //       bannerSizing();
-        //     }
-        //     break;
-        //   case '/privacy-policy':
-        //     if (!privacyPolicyPageLoaded) {
-        //       privacyPolicyPageLoaded = true;
-        //       console.log('privacyPolicyPageLoaded', privacyPolicyPageLoaded);
-        //       bannerSizing();
-        //     }
-        //     break;
-        //   default:
-        //     console.log('default');
-        // }
+        switch (storedActivePage) {
+          case '/':
+            if (!homePageLoaded) {
+              homePageLoaded = true;
+              console.log('indexPageLoaded', homePageLoaded);  
+            }
+            if (homePageLoaded && !bannerLoaded) {
+              bannerLoaded = setBannerSizing();
+            }
+            // if (homePageLoaded && !galleryLoaded) {
+            //   galleryLoaded = homepageGallery();
+            //   console.log('galleryLoaded', galleryLoaded);
+            // }
+            break;
+          case '/home':
+            
+            break;
+          case '/services':
+            if (!servicesPageLoaded) {
+              servicesPageLoaded = true;
+              console.log('servicesPageLoaded', servicesPageLoaded);
+              // setBannerSizing();
+              // const containerToHoldServices = document.querySelector('[id="groups\/1\/text"]');
+              // const servicesTopBanner = document.querySelector('.container .w-container.row a .image img');
+              // containerToHoldServices.innerHTML = '<div class="simple-table-wrapper"><table class="simple-table style-top"><tbody><tr><td class="cell" style="width: 50%;"><div class="paragraph"><font color="#ffffff">DESIGN SERVICES</font></div></td><td class="cell" style="width: 50%;"><div class="paragraph"><font color="#ffffff">PRICES</font></div></td></tr><tr><td class="cell" style="width: 50%;"><div class="paragraph">Haircut &amp; Blow Out</div></td><td class="cell" style="width: 50%;"><div class="paragraph"><span style="font-weight:700"></span>$60 - $85</div></td></tr><tr><td class="cell" style="width: 50%;"><div class="paragraph">Wash &amp; Style</div></td><td class="cell" style="width: 50%;"><div class="paragraph">​$50+ ( w/hot tool additional $10.00)</div></td></tr><tr><td class="cell" style="width: 50%;"><div class="paragraph">Wet Hair Cut</div></td><td class="cell" style="width: 50%;"><div class="paragraph"><span style="color:rgb(34, 34, 34)">$50+</span></div></td></tr></tbody></table></div><div class="simple-table-wrapper"><table class="simple-table style-top"><tbody><tr><td class="cell"><div class="paragraph"><font color="#ffffff">COLOR SERVICES</font></div></td><td class="cell"><div class="paragraph"><font color="#ffffff">PRICES</font></div></td></tr><tr><td class="cell"><div class="paragraph">Single Process</div></td><td class="cell"><div class="paragraph"><span style="color:rgb(34, 34, 34)">$80+</span></div></td></tr><tr><td class="cell"><div class="paragraph">​Color Gloss/ Glaze</div></td><td class="cell"><div class="paragraph"><span style="color:rgb(34, 34, 34)">&nbsp;$60+</span></div></td></tr><tr><td class="cell"><div class="paragraph">​Fashion or Corrective Color</div></td><td class="cell"><div class="paragraph">​Priced Upon Consultation&nbsp;</div></td></tr></tbody></table></div><div class="simple-table-wrapper"><table class="simple-table style-top"><tbody><tr><td class="cell"><div class="paragraph">​<font color="#ffffff">DIMENSIONAL COLOR</font>&nbsp;</div></td><td class="cell"><div class="paragraph"><font color="#ffffff">PRICES</font></div></td></tr><tr><td class="cell"><div class="paragraph">​1/2 Head Foil</div></td><td class="cell"><div class="paragraph">​$110 - $120</div></td></tr><tr><td class="cell"><div class="paragraph"><span style="color:rgb(34, 34, 34)">3/4 Foil</span></div></td><td class="cell"><div class="paragraph">​<span style="color:rgb(34, 34, 34)">&nbsp;$125 - $155</span></div></td></tr><tr><td class="cell"><div class="paragraph"><span style="color:rgb(34, 34, 34)">Full Head Foil&nbsp;</span>​</div></td><td class="cell"><div class="paragraph"><span style="color:rgb(34, 34, 34)">$150 - $190</span></div></td></tr><tr><td class="cell"><div class="paragraph"><span style="color:rgb(34, 34, 34)">Platinum Card Foil</span></div></td><td class="cell"><div class="paragraph"><span style="color:rgb(34, 34, 34)">$250+</span></div></td></tr></tbody></table></div><div class="simple-table-wrapper"><table class="simple-table style-top"><tbody><tr><td class="cell"><div class="paragraph"><font color="#ffffff">PAINTING&nbsp;​</font></div></td><td class="cell"><div class="paragraph"><font color="#ffffff">PRICES</font></div></td></tr><tr><td class="cell"><div class="paragraph"><span style="color:rgb(34, 34, 34)">Balayage</span></div></td><td class="cell"><div class="paragraph"><span style="color:rgb(34, 34, 34)">$250+</span></div></td></tr><tr><td class="cell"><div class="paragraph"><span style="color:rgb(34, 34, 34)">Ombre</span></div></td><td class="cell"><div class="paragraph"><span style="color:rgb(34, 34, 34)">$240+</span></div></td></tr></tbody></table></div><div class="simple-table-wrapper"><table class="simple-table style-top"><tbody><tr><td class="cell" style="width: 50%;"><div class="paragraph"><font color="#ffffff">​TEXTURIZING</font></div></td><td class="cell" style="width: 49%;"><div class="paragraph"><font color="#ffffff">PRICES</font></div></td></tr><tr><td class="cell" style="width: 50%;"><div class="paragraph">​Full Natural Keratin Smoothing Treatment</div></td><td class="cell" style="width: 49%;"><div class="paragraph"><span style="color:rgb(34, 34, 34)">$375+</span></div></td></tr><tr><td class="cell" style="width: 50%;"><div class="paragraph"><span style="color:rgb(34, 34, 34)">Keratin Complex Express Blowout&nbsp;</span>​</div></td><td class="cell" style="width: 49%;"><div class="paragraph"><span style="color:rgb(34, 34, 34)">$165+</span></div></td></tr></tbody></table></div><div class="paragraph">​All Pricing Is A LA CARTE</div>';
+              // servicesTopBanner.classList.add('services-top-banner');
+            }
+            break;
+          case '/products':
+            if (!productsPageLoaded) {
+              productsPageLoaded = true;
+              console.log('productsPageLoaded', productsPageLoaded);
+              // setBannerSizing();
+              // const productsTopBlock = document.querySelectorAll('.main-content-wrapper .container.content-align--center')[0];
+              // console.log('productsTopBlock', productsTopBlock);
+              // if (productsTopBlock) {
+              //   productsTopBlock.classList.add('products-top-block');
+              // }
+            }
+            break;
+          case '/gift-cards':
+            if (!giftCardsPageLoaded) {
+              giftCardsPageLoaded = true;
+              // Nothing to do here
+              console.log('giftCardsPageLoaded', giftCardsPageLoaded);
+            }
+            break;
+          case '/our-story':
+            if (!ourStoryPageLoaded) {
+              ourStoryPageLoaded = true;
+              console.log('ourStoryPageLoaded', ourStoryPageLoaded);
+              // setBannerSizing();
+              // const ourStoryBlocks = document.querySelectorAll('.story-2.container .w-container.col > .w-cell.row');
+              // const ourStoryGraphicBlock = document.querySelectorAll('.story-2.container .w-container.col > .w-cell.row')[ourStoryBlocks.length - 1];
+              // ourStoryGraphicBlock.classList.add('our-story-graphic-block');
+            }
+            break;
+          case '/staff':
+            if (!staffPageLoaded) {
+              staffPageLoaded = true;
+              console.log('staffPageLoaded', staffPageLoaded);
+              // setBannerSizing();
+              // const teamMemberBlocks = Array.from(document.querySelectorAll('.w-text--rendered.text-component')).filter(block => block.id === "");
+              // const teamMemberBlockLisa = teamMemberBlocks[1];
+              // const teamMemberBlockJulia = teamMemberBlocks[2];
+              // teamMemberBlockLisa.insertAdjacentHTML('afterend', '<div><div class="team-block-marketing"><a href="https://squareup.com/appointments/book/nad1ifwni5px0c/LZ24RC7QFEQ58/services" target="_blank"><img src="https://mrmuzik.github.io/KARicco/images/lookslogo.png" alt="Looks by Lisa Aftosmes" /></a></div><div class="team-block-marketing"><a href="https://squareup.com/appointments/book/nad1ifwni5px0c/LZ24RC7QFEQ58/services" target="_blank"><img src="https://mrmuzik.github.io/KARicco/images/looksqr.png" alt="Looks by Lisa Aftosmes - QR Code" /></a></div></div>');
+              // teamMemberBlockJulia.insertAdjacentHTML('afterend', '<div><div class="team-block-marketing"><a href="https://hair-by-julia-cathryn.square.site" target="_blank"><img src="https://mrmuzik.github.io/KARicco/images/julialogo.png" alt="Hair by Julia Cathryn" /></a></div><div class="team-block-marketing"><a href="https://hair-by-julia-cathryn.square.site" target="_blank"><img src="https://mrmuzik.github.io/KARicco/images/juliaqr.png" alit="Hair by Julia Cathryn - QR Code" /></a></div></div>');
+            }
+            break;
+          case '/contact-us':
+            if (!contactPageLoaded) {
+              contactPageLoaded = true;
+              console.log('contactPageLoaded', contactPageLoaded);
+              // setBannerSizing();
+              // const contactUsBlock = document.querySelector('.w-text--rendered.text-component.link--browser');
+              // contactUsBlock.insertAdjacentHTML('beforebegin', '<img class="contact-img" src="https://mrmuzik.github.io/KARicco/images/location_1.jpg" alt="K.A. Ricco Hair Design Location" />');
+            }
+            break;
+          case '/jobs':
+            if (!jobsPageLoaded) {
+              jobsPageLoaded = true;
+              console.log('jobsPageLoaded', jobsPageLoaded);
+              // setBannerSizing();
+              // const jobsBlock = Array.from(document.querySelectorAll('.text-component.w-text--rendered')).filter(item => item.innerText.includes('message Karen'))[0];
+              // jobsBlock.insertAdjacentHTML('beforeend', '<a href="mailto:kariccohairdesign03@gmail.com" class="w-button w-button--button w-button--primary w-button--large w-button--full-width-mobile mt-10">Email Karen</a>');
+            }
+            break;
+          case '/terms-of-service':
+            if (!termsOfServicePageLoaded) {
+              termsOfServicePageLoaded = true;
+              console.log('termsOfServicePageLoaded', termsOfServicePageLoaded);
+              // setBannerSizing();
+            }
+            break;
+          case '/privacy-policy':
+            if (!privacyPolicyPageLoaded) {
+              privacyPolicyPageLoaded = true;
+              console.log('privacyPolicyPageLoaded', privacyPolicyPageLoaded);
+              // setBannerSizing();
+            }
+            break;
+          default:
+            console.log('default');
+        }
       }
     }
   }
