@@ -113,6 +113,9 @@ const setFooter = () => {
           console.log('nextSibling');
           console.dir(row2Col2LinkContainer.nextSibling);
           row2Col2LinkContainer.parentNode.insertBefore(footerNav, row2Col2LinkContainer.nextSibling);
+        } else {
+          console.log('no nextSibling');
+          row2Col2LinkContainer.parentNode.appendChild(footerNav);
         }
         console.log('footer loaded');
         return true;

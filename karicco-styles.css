@@ -732,9 +732,9 @@ form .form__row:before {
 }
 /* Our Story - All Sizes */
 .our-story-graphic-block {
-  max-width: 313px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 313px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 /* Products - All Sizes */
 .products-top-block {
