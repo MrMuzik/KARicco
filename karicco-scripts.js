@@ -283,9 +283,9 @@ const init = () => {
             break;
           case '/staff':
             if (!staffPageLoaded) {
-              const teamMemberBlocks = Array.from(document.querySelectorAll('.w-text--rendered.text-component')).filter(block => block.id === "");
-              const teamMemberBlockLisa = teamMemberBlocks[1];
-              const teamMemberBlockJulia = teamMemberBlocks[2];
+              // const teamMemberBlocks = Array.from(document.querySelectorAll('.w-text--rendered.text-component')).filter(block => block.id === "");
+              const teamMemberBlockLisa = document.querySelectorAll('#YveJjy .detail-7 .w-container.col .w-cell.row .text-component.w-text--rendered')[3];
+              const teamMemberBlockJulia = document.querySelectorAll('#uSkUwX .detail-7 .w-container.col .w-cell.row .text-component.w-text--rendered')[1];
               if (teamMemberBlockLisa && teamMemberBlockJulia) {
                 teamMemberBlockLisa.insertAdjacentHTML('afterend', '<div><div class="team-block-marketing"><a href="https://squareup.com/appointments/book/nad1ifwni5px0c/LZ24RC7QFEQ58/services" target="_blank"><img src="https://mrmuzik.github.io/KARicco/images/lookslogo.png" alt="Looks by Lisa Aftosmes" /></a></div><div class="team-block-marketing"><a href="https://squareup.com/appointments/book/nad1ifwni5px0c/LZ24RC7QFEQ58/services" target="_blank"><img src="https://mrmuzik.github.io/KARicco/images/looksqr.png" alt="Looks by Lisa Aftosmes - QR Code" /></a></div></div>');
                 teamMemberBlockJulia.insertAdjacentHTML('afterend', '<div><div class="team-block-marketing"><a href="https://hair-by-julia-cathryn.square.site" target="_blank"><img src="https://mrmuzik.github.io/KARicco/images/julialogo.png" alt="Hair by Julia Cathryn" /></a></div><div class="team-block-marketing"><a href="https://hair-by-julia-cathryn.square.site" target="_blank"><img src="https://mrmuzik.github.io/KARicco/images/juliaqr.png" alit="Hair by Julia Cathryn - QR Code" /></a></div></div>');
