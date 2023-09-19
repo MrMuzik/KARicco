@@ -109,11 +109,7 @@ const setFooter = () => {
         }
         footerNav.classList.add('footer-nav');
         footerNav.innerHTML = `<a href="/terms-of-service">Terms of Service</a> | <a href="/privacy-policy">Privacy Policy </a>|&nbsp; Copyright © 2023&nbsp;`;
-        if (row2Col2LinkContainer.nextSibling) {
-          console.log('nextSibling');
-          console.dir(row2Col2LinkContainer.nextSibling);
-          row2Col2LinkContainer.parentNode.insertBefore(footerNav, row2Col2LinkContainer.nextSibling);
-        } else {
+        if (!document.querySelector('.footer-nav')) {
           console.log('no nextSibling');
           row2Col2LinkContainer.parentNode.appendChild(footerNav);
         }
@@ -257,7 +253,7 @@ const init = () => {
           case '/products':
             if (!productsPageLoaded) {
               console.log('productsPageLoaded', productsPageLoaded);
-              const productsTopBlock = document.querySelectorAll('.main-content-wrapper .container.content-align--center')[0];
+              const productsTopBlock = document.querySelector('.main-content-wrapper .container.content-align--center');
               if (productsTopBlock) {
                 productsTopBlock.classList.add('products-top-block');
                 productsPageLoaded = true;
@@ -296,18 +292,22 @@ const init = () => {
             break;
           case '/contact-us':
             if (!contactPageLoaded) {
-              contactPageLoaded = true;
-              console.log('contactPageLoaded', contactPageLoaded);
-              // const contactUsBlock = document.querySelector('.w-text--rendered.text-component.link--browser');
-              // contactUsBlock.insertAdjacentHTML('beforebegin', '<img class="contact-img" src="https://mrmuzik.github.io/KARicco/images/location_1.jpg" alt="K.A. Ricco Hair Design Location" />');
+              const contactUsBlock = document.querySelector('.w-text--rendered.text-component.link--browser');
+              if (contactUsBlock) {
+                contactUsBlock.insertAdjacentHTML('beforebegin', '<img class="contact-img" src="https://mrmuzik.github.io/KARicco/images/location_1.jpg" alt="K.A. Ricco Hair Design Location" />');
+                contactPageLoaded = true;
+                console.log('contactPageLoaded', contactPageLoaded);
+              }
             }
             break;
           case '/jobs':
             if (!jobsPageLoaded) {
-              jobsPageLoaded = true;
-              console.log('jobsPageLoaded', jobsPageLoaded);
-              // const jobsBlock = Array.from(document.querySelectorAll('.text-component.w-text--rendered')).filter(item => item.innerText.includes('message Karen'))[0];
-              // jobsBlock.insertAdjacentHTML('beforeend', '<a href="mailto:kariccohairdesign03@gmail.com" class="w-button w-button--button w-button--primary w-button--large w-button--full-width-mobile mt-10">Email Karen</a>');
+              const jobsBlock = Array.from(document.querySelectorAll('.text-component.w-text--rendered')).filter(item => item.innerText.includes('message Karen'))[0];
+              if (jobsBlock) {
+                jobsBlock.insertAdjacentHTML('beforeend', '<a href="mailto:kariccohairdesign03@gmail.com" class="w-button w-button--button w-button--primary w-button--large w-button--full-width-mobile mt-10">Email Karen</a>');
+                jobsPageLoaded = true;
+                console.log('jobsPageLoaded', jobsPageLoaded);
+              }
             }
             break;
           case '/terms-of-service':
