@@ -201,6 +201,7 @@ const init = () => {
               servicesPageLoaded = false;
               productsPageLoaded = false;
               contactPageLoaded = false;
+              ourStoryPageLoaded = false;
             }
             storedActivePage = activePage;
             console.log('storedActivePage', storedActivePage);
