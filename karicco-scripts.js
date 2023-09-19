@@ -200,6 +200,7 @@ const init = () => {
               galleryLoaded = false;
               servicesPageLoaded = false;
               productsPageLoaded = false;
+              contactPageLoaded = false;
             }
             storedActivePage = activePage;
             console.log('storedActivePage', storedActivePage);
