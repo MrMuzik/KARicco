@@ -1,12 +1,12 @@
 const setBannerSizing = () => {
   const headerBanner = document.querySelector('.w-image-block.w-block-banner.w-block.banner-3');
-  console.log('headerBanner', headerBanner);
+  // console.log('headerBanner', headerBanner);
   if (!headerBanner) {
     return false;
   } else if (headerBanner) {
     headerBanner.classList.add('custom-header-banner');
     headerBanner.querySelector('.container .element-group .text-component.w-text--rendered').classList.add('custom-header-banner-page-title');
-    console.log('bannerLoaded');
+    // console.log('bannerLoaded');
     return true;
   }
 };
@@ -16,7 +16,7 @@ const setHomepageGallery = () => {
   if (!gallery) {
     return false;
   } else if (gallery) {
-    console.log('gallery', gallery);
+    // console.log('gallery', gallery);
     const container = gallery.querySelector('.container');
     const rows = gallery.querySelectorAll('.container > .w-cell.row')
     const rowToMove = rows[0];
@@ -24,9 +24,9 @@ const setHomepageGallery = () => {
     const images = gallery.querySelectorAll('img');
     const imageSrcs = [];
     images.forEach((image) => {
-      console.dir(image);
+      // console.dir(image);
       if (image.src) {
-        console.log('image', image);
+        // console.log('image', image);
         imageSrcs.push(image.src);
       }
     });
@@ -103,34 +103,34 @@ const setFooter = () => {
         });
         row2Col2Addition.classList.add('footer-row2-col2-addition');
         // TODO: move image to github
-        row2Col2Addition.innerHTML = `<a href="/jobs"><img src="https://sandbox.weebly.com/uploads/b/73f56a8a48dfe0414ff550e9b6769f5c1dad0659117c2683eaa0013591841d3f/we-re-hiring-2_1692141219.png?width=2400&amp;optimize=medium" alt="Join The Team" width="196"></a>`;
+        row2Col2Addition.innerHTML = `<a href="/jobs"><img src="https://mrmuzik.github.io/KARicco/images/we-re-hiring-2_1692141219.png" alt="Join The Team" width="196"></a>`;
         if (row2Col2Links[0]?.offsetHeight > 0) {
           row2Col2LinkContainer.insertBefore(row2Col2Addition, row2Col2Links[0]);
         }
         footerNav.classList.add('footer-nav');
         footerNav.innerHTML = `<a href="/terms-of-service">Terms of Service</a> | <a href="/privacy-policy">Privacy Policy </a>|&nbsp; Copyright © 2023&nbsp;`;
         if (!document.querySelector('.footer-nav')) {
-          console.log('no nextSibling');
+          // console.log('no nextSibling');
           row2Col2LinkContainer.parentNode.appendChild(footerNav);
         }
-        console.log('footer loaded');
+        // console.log('footer loaded');
         return true;
       } else {
-        console.log('footer not loaded');
+        // console.log('footer not loaded');
         return false;
       }
     } else {
-      console.log('footer not loaded');
+      // console.log('footer not loaded');
       return false;
     }
   } else {
-    console.log('footer not loaded');
+    // console.log('footer not loaded');
     return false;
   }
 };
 
 const init = () => {
-  console.log('Init Loaded');
+  // console.log('Init Loaded');
   const page = document.querySelector('.app-container');
   const observer = new MutationObserver(logChanges);
   // Items to watch:
@@ -162,10 +162,10 @@ const init = () => {
         
         if (container) {
           contentLoaded = true;
-          console.log('page loaded');
+          // console.log('page loaded');
         } else {
           contentLoaded = false;
-          console.log('page not loaded');
+          // console.log('page not loaded');
         }
       }
       if (!navLoaded) {
@@ -173,10 +173,10 @@ const init = () => {
         const links = document.querySelectorAll('li.nav__item > a');
         if (links.length > 0) {
           navLoaded = true;
-          console.log('nav loaded');
+          // console.log('nav loaded');
         } else {
           navLoaded = false;
-          console.log('nav not loaded');
+          // console.log('nav not loaded');
         }
       }
       if (!footerLoaded) {
@@ -189,7 +189,7 @@ const init = () => {
       if (contentLoaded) {
         let activePage = document.location.pathname;
         if (activePage) {
-          console.log('activePage', activePage);
+          // console.log('activePage', activePage);
           if (activePage !== storedActivePage) {
             if (storedActivePage !== '') {
               // Reset watch items
@@ -202,34 +202,33 @@ const init = () => {
               productsPageLoaded = false;
               contactPageLoaded = false;
               ourStoryPageLoaded = false;
+              staffPageLoaded = false;
             }
             storedActivePage = activePage;
-            console.log('storedActivePage', storedActivePage);
+            // console.log('storedActivePage', storedActivePage);
           }
-        } else {
-          console.log('activePage not found');
         }
         switch (storedActivePage) {
           case '/':
             if (!homePageLoaded) {
               homePageLoaded = true;
-              console.log('indexPageLoaded', homePageLoaded);  
+              // console.log('indexPageLoaded', homePageLoaded);  
             }
             
             if (homePageLoaded && !galleryLoaded) {
               galleryLoaded = setHomepageGallery();
-              console.log('galleryLoaded', galleryLoaded);
+              // console.log('galleryLoaded', galleryLoaded);
             }
             break;
           case '/home':
             if (!homePageLoaded) {
               homePageLoaded = true;
-              console.log('homePageLoaded', homePageLoaded);  
+              // console.log('homePageLoaded', homePageLoaded);  
             }
             
             if (homePageLoaded && !galleryLoaded) {
               galleryLoaded = setHomepageGallery();
-              console.log('galleryLoaded', galleryLoaded);
+              // console.log('galleryLoaded', galleryLoaded);
             }
             break;
           case '/services':
@@ -243,9 +242,9 @@ const init = () => {
                 tableWrapper.classList.add('services-container');
                 containerToHoldServices.insertBefore(tableWrapper, placeholderParagraph);
                 placeholderParagraph.remove();
-                console.log('containerToHoldServices', containerToHoldServices);
+                // console.log('containerToHoldServices', containerToHoldServices);
                 servicesPageLoaded = true;
-                console.log('servicesPageLoaded', servicesPageLoaded);
+                // console.log('servicesPageLoaded', servicesPageLoaded);
               }
               if (servicesTopBanner) {
                 servicesTopBanner.classList.add('services-top-banner');
@@ -254,20 +253,19 @@ const init = () => {
             break;
           case '/products':
             if (!productsPageLoaded) {
-              console.log('productsPageLoaded', productsPageLoaded);
+              // console.log('productsPageLoaded', productsPageLoaded);
               const productsTopBlock = document.querySelector('.main-content-wrapper .container.content-align--center');
               if (productsTopBlock) {
                 productsTopBlock.classList.add('products-top-block');
                 productsPageLoaded = true;
-                console.log('productsTopBlock', productsTopBlock);
+                // console.log('productsTopBlock', productsTopBlock);
               }
             }
             break;
           case '/gift-cards':
             if (!giftCardsPageLoaded) {
-              giftCardsPageLoaded = true;
               // Nothing to do here
-              console.log('giftCardsPageLoaded', giftCardsPageLoaded);
+              giftCardsPageLoaded = true;
             }
             break;
           case '/our-story':
@@ -277,20 +275,19 @@ const init = () => {
               if (ourStoryGraphicBlock) {
                 ourStoryGraphicBlock.classList.add('our-story-graphic-block');
                 ourStoryPageLoaded = true;
-                console.log('ourStoryPageLoaded', ourStoryPageLoaded);
+                // console.log('ourStoryPageLoaded', ourStoryPageLoaded);
               }
             }
             break;
           case '/staff':
             if (!staffPageLoaded) {
-              // const teamMemberBlocks = Array.from(document.querySelectorAll('.w-text--rendered.text-component')).filter(block => block.id === "");
               const teamMemberBlockLisa = document.querySelectorAll('#YveJjy .detail-7 .w-container.col .w-cell.row .text-component.w-text--rendered')[3];
               const teamMemberBlockJulia = document.querySelectorAll('#uSkUwX .detail-7 .w-container.col .w-cell.row .text-component.w-text--rendered')[1];
               if (teamMemberBlockLisa && teamMemberBlockJulia) {
                 teamMemberBlockLisa.insertAdjacentHTML('afterend', '<div><div class="team-block-marketing"><a href="https://squareup.com/appointments/book/nad1ifwni5px0c/LZ24RC7QFEQ58/services" target="_blank"><img src="https://mrmuzik.github.io/KARicco/images/lookslogo.png" alt="Looks by Lisa Aftosmes" /></a></div><div class="team-block-marketing"><a href="https://squareup.com/appointments/book/nad1ifwni5px0c/LZ24RC7QFEQ58/services" target="_blank"><img src="https://mrmuzik.github.io/KARicco/images/looksqr.png" alt="Looks by Lisa Aftosmes - QR Code" /></a></div></div>');
                 teamMemberBlockJulia.insertAdjacentHTML('afterend', '<div><div class="team-block-marketing"><a href="https://hair-by-julia-cathryn.square.site" target="_blank"><img src="https://mrmuzik.github.io/KARicco/images/julialogo.png" alt="Hair by Julia Cathryn" /></a></div><div class="team-block-marketing"><a href="https://hair-by-julia-cathryn.square.site" target="_blank"><img src="https://mrmuzik.github.io/KARicco/images/juliaqr.png" alit="Hair by Julia Cathryn - QR Code" /></a></div></div>');
                 staffPageLoaded = true;
-                console.log('staffPageLoaded', staffPageLoaded);
+                // console.log('staffPageLoaded', staffPageLoaded);
               }
             }
             break;
@@ -300,7 +297,7 @@ const init = () => {
               if (contactUsBlock) {
                 contactUsBlock.insertAdjacentHTML('beforebegin', '<img class="contact-img" src="https://mrmuzik.github.io/KARicco/images/location_1.jpg" alt="K.A. Ricco Hair Design Location" />');
                 contactPageLoaded = true;
-                console.log('contactPageLoaded', contactPageLoaded);
+                // console.log('contactPageLoaded', contactPageLoaded);
               }
             }
             break;
@@ -310,24 +307,26 @@ const init = () => {
               if (jobsBlock) {
                 jobsBlock.insertAdjacentHTML('beforeend', '<a href="mailto:kariccohairdesign03@gmail.com" class="w-button w-button--button w-button--primary w-button--large w-button--full-width-mobile mt-10">Email Karen</a>');
                 jobsPageLoaded = true;
-                console.log('jobsPageLoaded', jobsPageLoaded);
+                // console.log('jobsPageLoaded', jobsPageLoaded);
               }
             }
             break;
           case '/terms-of-service':
             if (!termsOfServicePageLoaded) {
+              // Nothing to do here
               termsOfServicePageLoaded = true;
-              console.log('termsOfServicePageLoaded', termsOfServicePageLoaded);
+              // console.log('termsOfServicePageLoaded', termsOfServicePageLoaded);
             }
             break;
           case '/privacy-policy':
             if (!privacyPolicyPageLoaded) {
+              // Nothing to do here
               privacyPolicyPageLoaded = true;
-              console.log('privacyPolicyPageLoaded', privacyPolicyPageLoaded);
+              // console.log('privacyPolicyPageLoaded', privacyPolicyPageLoaded);
             }
             break;
           default:
-            console.log('default');
+            // console.log('default');
         }
       }
     }
