@@ -31,6 +31,7 @@ const setHomepageGallery = () => {
       }
     });
     if (!imageSrcs.length && imageSrcs.length < 3) {
+      console.log('imageSrcsTooShort', imageSrcs);
       return false;
     }
     if (rowToReplace) {
