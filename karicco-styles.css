@@ -472,9 +472,6 @@ template {
   .local-love-container img.imgHasMax {
     aspect-ratio: auto;
   }
-  .local-love-container img.imgHasMax[src="undefined"] {
-    display: none;
-}
 }
 /* Styles for all sizes */
 .custom-header-banner-page-title {
@@ -675,6 +672,9 @@ form .form__row:before {
 .local-love-container img.imgHasMax {
   max-height: 500px;
   aspect-ratio: 14/23;
+}
+.local-love-container img.imgHasMax[src="undefined"] {
+  display: none;
 }
 .local-love-centered {
   text-align: center;
