@@ -374,9 +374,7 @@ template {
 * Add the correct display in IE 10.
 */
 
-[hidden],
-.hidden
-img[src="undefined"] {
+[hidden] {
   display: none;
 }
 /* END OF RESET */
@@ -474,6 +472,9 @@ img[src="undefined"] {
   .local-love-container img.imgHasMax {
     aspect-ratio: auto;
   }
+  .local-love-container img.imgHasMax[src="undefined"] {
+    display: none;
+}
 }
 /* Styles for all sizes */
 .custom-header-banner-page-title {
