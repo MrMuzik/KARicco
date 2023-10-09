@@ -30,7 +30,7 @@ const setHomepageGallery = () => {
         imageSrcs.push(image.src);
       }
     });
-    if (!imageSrcs.length && imageSrcs.length < 3) {
+    if (!imageSrcs.length || imageSrcs.length < 3) {
       console.log('imageSrcsTooShort', imageSrcs);
       return false;
     }
