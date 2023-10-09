@@ -31,7 +31,6 @@ const setHomepageGallery = () => {
       }
     });
     if (!imageSrcs.length) {
-      console.log('imageSrcsTooShort', imageSrcs);
       return false;
     }
     if (rowToReplace) {
@@ -54,11 +53,7 @@ const setHomepageGallery = () => {
       } else if (index > 3) {
         ip = 2;
       }
-      if (imageSrcs[index - ip]) {
       image.src = imageSrcs[index - ip];
-      } else {
-        image.classList.add('hidden');
-      }
     });
     container.classList.add('gallery-container');
     return true;

@@ -375,7 +375,8 @@ template {
 */
 
 [hidden],
-.hidden {
+.hidden
+img[src="undefined"] {
   display: none;
 }
 /* END OF RESET */
