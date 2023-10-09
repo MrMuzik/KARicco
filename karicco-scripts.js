@@ -30,7 +30,7 @@ const setHomepageGallery = () => {
         imageSrcs.push(image.src);
       }
     });
-    if (!imageSrcs.length) {
+    if (!imageSrcs.length && imageSrcs.length < 3) {
       return false;
     }
     if (rowToReplace) {
