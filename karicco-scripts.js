@@ -44,8 +44,6 @@ const setHomepageGallery = () => {
       rowToMove.remove();
     }
     const placeholderImages = document.querySelectorAll('.local-love-container img');
-    console.log('placeholderImages', placeholderImages);
-    console.log('imageSrcs', imageSrcs);
     placeholderImages.forEach((image, index) => {
       let ip = 0
       if (index === 2 || index === 3) {
